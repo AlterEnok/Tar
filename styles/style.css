@@ -214,17 +214,14 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-
 .hero__slider {
   width: 100%;
   height: 100%;
 }
-
 .hero__wrapper {
   display: flex;
   height: 100%;
 }
-
 .hero__slide {
   position: relative;
   width: 100%;
@@ -232,7 +229,6 @@ body {
   background-size: cover;
   background-position: center;
 }
-
 .hero__content {
   position: absolute;
   bottom: 10%;
@@ -240,7 +236,6 @@ body {
   color: #fff;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
-
 .hero__title {
   position: relative;
   top: -25vh;
@@ -263,7 +258,6 @@ body {
     top: -40vh;
   }
 }
-
 .hero__subtitle {
   width: 634px;
   position: relative;
@@ -288,13 +282,11 @@ body {
     max-width: 393px;
   }
 }
-
 .hero__subtitle span {
   font-family: "Kaisei HarunoUmi", sans-serif;
   line-height: 145%;
   color: #121b25;
 }
-
 .hero__description {
   width: 644px;
   font-weight: 400;
