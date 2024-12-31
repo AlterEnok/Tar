@@ -144,9 +144,19 @@ body {
 
         }
     }
+
+
 }
 
+.menu__header__link {
+    color: #fff;
 
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: #fb7507;
+        }
+    }
+}
 
 
 .menu {
@@ -216,8 +226,8 @@ body {
         &._active span:nth-child(1) {
             transform: rotate(45deg);
             top: 50%;
-            background-color: #ffc107;
-            // position: relative;
+            background-color: #fb7507;
+
         }
 
         &._active span:nth-child(2) {
@@ -229,8 +239,8 @@ body {
             transform: rotate(-47deg);
             top: -37%;
             width: 26px;
-            background-color: #ffc107;
-            // position: relative;
+            background-color: #fb7507;
+
         }
     }
 }
@@ -261,6 +271,14 @@ body {
         height: 100%;
         background-size: cover;
         background-position: center;
+        opacity: 0; // По умолчанию скрыты
+        transform: scale(1.1); // Легкий зум для эффекта "песка"
+        transition: opacity 1s ease, transform 1s ease;
+
+        &.swiper-slide-active {
+            opacity: 1; // Плавное появление активного слайда
+            transform: scale(1); // Возврат масштаба
+        }
     }
 
     &__content {
@@ -273,11 +291,19 @@ body {
 
     &__title {
         position: relative;
-        top: -25vh;
         font-family: "Abhaya Libre", sans-serif;
         font-size: 115px;
         line-height: 118%;
         letter-spacing: 0.21em;
+        top: -25vh;
+        opacity: 0; // Изначально скрыт
+        transform: translateY(20px); // Смещение вниз
+        transition: opacity 0.8s ease, transform 0.8s ease;
+
+        &.visible {
+            opacity: 1; // Плавное появление текста
+            transform: translateY(0); // Возврат в изначальное положение
+        }
 
         @media (min-width: 1900px) and (max-width: 3500px) {
             top: -40vh;
@@ -290,24 +316,25 @@ body {
             max-width: 399px;
             top: -40vh;
         }
-
-        // @media (max-width: 740px) {
-        //     font-size: 37px;
-        //     top: -33vh;
-        // }
     }
 
     &__subtitle {
         width: 634px;
         position: relative;
-        top: -24vh;
-        font-size: clamp(16px, 2vw, 24px);
-        margin-top: 10px;
         font-family: "K2D", sans-serif;
         font-weight: 700;
         font-size: 32px;
         line-height: 130%;
         letter-spacing: 0.36em;
+        top: -24vh;
+        opacity: 0; // Изначально скрыт
+        transform: translateX(-100%); // Выезд из-за левого края
+        transition: opacity 1.5s ease, transform 1.5s ease;
+
+        &.visible {
+            opacity: 1; // Плавное появление текста
+            transform: translateX(0); // Возврат в изначальное положение
+        }
 
         @media (min-width: 1900px) and (max-width: 3500px) {
             top: -35vh;
@@ -318,11 +345,6 @@ body {
             top: -40vh;
             max-width: 393px;
         }
-
-        // @media (max-width: 740px) {
-        //     font-size: 23px;
-        //     top: -31vh;
-        // }
 
         span {
             font-family: "Kaisei HarunoUmi", sans-serif;

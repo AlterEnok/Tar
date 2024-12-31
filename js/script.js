@@ -15,36 +15,55 @@ document.addEventListener("DOMContentLoaded", () => {
 /*slider*/
 
 const swiper = new Swiper('.swiper-container', {
-    loop: false, // Бесконечный цикл отключен, так как слайдов всего два
-    effect: 'fade', // Плавная смена слайда
+    loop: true,
+    effect: 'fade', // Плавный fade-эффект
     fadeEffect: {
-        crossFade: true, // Более мягкий эффект
+        crossFade: true,
     },
     autoplay: {
-        delay: 6000, // Задержка между слайдами
-        disableOnInteraction: false, // Продолжать автопрокрутку после взаимодействия
+        delay: 5000, // Задержка между слайдами
+        disableOnInteraction: false,
     },
     on: {
-        slideChange: () => {
-            // Убираем зум и текст у всех слайдов
-            document.querySelectorAll('.swiper-slide').forEach(slide => {
-                slide.classList.remove('zoom');
-                const content = slide.querySelector('.slide-content');
-                if (content) content.classList.remove('visible');
-            });
+        init: () => {
+            // Убедимся, что элементы первого слайда видимы
+            const firstSlide = document.querySelector('.swiper-slide-active');
+            if (firstSlide) {
+                const title = firstSlide.querySelector('.hero__title');
+                const subtitle = firstSlide.querySelector('.hero__subtitle');
+
+                if (title) title.classList.add('visible'); // Показать заголовок
+                if (subtitle) {
+                    setTimeout(() => {
+                        subtitle.classList.add('visible'); // Задержка для подзаголовка
+                    }, 500); // Задержка в 500 мс
+                }
+            }
         },
         slideChangeTransitionStart: () => {
-            console.log('Начало перехода слайда');
+            // Убираем анимацию у всех слайдов
+            const slides = document.querySelectorAll('.hero__slide');
+            slides.forEach(slide => {
+                const title = slide.querySelector('.hero__title');
+                const subtitle = slide.querySelector('.hero__subtitle');
+
+                if (title) title.classList.remove('visible');
+                if (subtitle) subtitle.classList.remove('visible');
+            });
         },
         slideChangeTransitionEnd: () => {
+            // Анимация активного слайда
             const activeSlide = document.querySelector('.swiper-slide-active');
             if (activeSlide) {
-                activeSlide.classList.add('zoom'); // Применяем зум
-                console.log('Зум добавлен к активному слайду:', activeSlide);
+                const title = activeSlide.querySelector('.hero__title');
+                const subtitle = activeSlide.querySelector('.hero__subtitle');
 
-                // Добавляем анимацию текста
-                const content = activeSlide.querySelector('.slide-content');
-                if (content) content.classList.add('visible');
+                if (title) title.classList.add('visible'); // Показать заголовок
+                if (subtitle) {
+                    setTimeout(() => {
+                        subtitle.classList.add('visible'); // Задержка для подзаголовка
+                    }, 500); // Задержка в 500 мс
+                }
             }
         },
     },
