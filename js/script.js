@@ -14,34 +14,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /*slider*/
 
-const swiper = new Swiper('.swiper-container', {
+const heroSlider = new Swiper('.hero__slider', {
     loop: true,
-    effect: 'fade', // Плавный fade-эффект
-    fadeEffect: {
-        crossFade: true,
+    effect: 'cube', // Эффект cube для первого слайдера
+    cubeEffect: {
+        shadow: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+        slideShadows: true,
     },
     autoplay: {
-        delay: 5000, // Задержка между слайдами
+        delay: 5000,
         disableOnInteraction: false,
     },
+    speed: 1500,
+    allowTouchMove: false,
     on: {
         init: () => {
-            // Убедимся, что элементы первого слайда видимы
             const firstSlide = document.querySelector('.swiper-slide-active');
             if (firstSlide) {
                 const title = firstSlide.querySelector('.hero__title');
                 const subtitle = firstSlide.querySelector('.hero__subtitle');
 
-                if (title) title.classList.add('visible'); // Показать заголовок
+                if (title) title.classList.add('visible');
                 if (subtitle) {
                     setTimeout(() => {
-                        subtitle.classList.add('visible'); // Задержка для подзаголовка
-                    }, 500); // Задержка в 500 мс
+                        subtitle.classList.add('visible');
+                    }, 500);
                 }
             }
         },
         slideChangeTransitionStart: () => {
-            // Убираем анимацию у всех слайдов
             const slides = document.querySelectorAll('.hero__slide');
             slides.forEach(slide => {
                 const title = slide.querySelector('.hero__title');
@@ -52,19 +55,41 @@ const swiper = new Swiper('.swiper-container', {
             });
         },
         slideChangeTransitionEnd: () => {
-            // Анимация активного слайда
             const activeSlide = document.querySelector('.swiper-slide-active');
             if (activeSlide) {
                 const title = activeSlide.querySelector('.hero__title');
                 const subtitle = activeSlide.querySelector('.hero__subtitle');
 
-                if (title) title.classList.add('visible'); // Показать заголовок
+                if (title) title.classList.add('visible');
                 if (subtitle) {
                     setTimeout(() => {
-                        subtitle.classList.add('visible'); // Задержка для подзаголовка
-                    }, 500); // Задержка в 500 мс
+                        subtitle.classList.add('visible');
+                    }, 500);
                 }
             }
+        },
+    },
+});
+
+// Второй слайдер
+const partnersSlider = new Swiper('.partners__slider', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+        delay: 3000, // уменьшена задержка между слайдами
+        disableOnInteraction: false,
+    },
+    speed: 800, // уменьшена скорость перехода слайдов
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
         },
     },
 });
