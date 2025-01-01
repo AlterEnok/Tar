@@ -23,10 +23,12 @@ img {
   padding: 0 15px;
 }
 
+html,
 body {
   background-color: #fdf9f9;
   position: relative;
   color: #fff;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -546,7 +548,7 @@ body {
 }
 @media (max-width: 767px) {
   .advantages__row {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 15px;
   }
 }
@@ -571,6 +573,22 @@ body {
 .advantages__support {
   display: flex;
   gap: 30px;
+}
+@media (max-width: 767px) {
+  .advantages__support {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+.advantages__support__right {
+  order: 1;
+  /* Показываем первым элементом */
+}
+@media (max-width: 767px) {
+  .advantages__support__right {
+    margin: 0 auto;
+    /* Выравниваем картинку */
+  }
 }
 .advantages__support__left {
   flex: 1 1 60%;
@@ -687,5 +705,18 @@ body {
     width: 150px;
     height: 50px;
     font-size: 14px;
+    position: absolute;
+    bottom: -62vh;
+  }
+}
+.advantages__right {
+  order: 1;
+  /* Показываем первым элементом */
+}
+@media (max-width: 767px) {
+  .advantages__right {
+    margin-right: 17px;
+    position: absolute;
+    bottom: -55vh;
   }
 }
