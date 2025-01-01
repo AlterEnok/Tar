@@ -490,6 +490,272 @@ body {
     }
 }
 
-
-
 //////////PARTNERS//////////////
+
+//////////ADVANTAGES//////////////
+
+
+.advantages {
+    position: relative;
+    padding: clamp(20px, 5vw, 60px); // Адаптивные отступы
+    background-color: #f9f9f9;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(20px, 3vw, 40px); // Адаптивный отступ между элементами
+    }
+
+    &__title {
+        font-family: "Koulen", sans-serif;
+        max-width: 665px;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 181%;
+        letter-spacing: 0.36em;
+        color: #121b25;
+        margin: 0 auto;
+        margin-bottom: 10px;
+
+        @media (max-width: 767px) {
+            font-size: 28px;
+        }
+    }
+
+    &__subtitle {
+        font-family: "Julius Sans One", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 109%;
+        letter-spacing: 0.14em;
+        color: #cd3d00;
+        text-align: left;
+        margin-bottom: 10px;
+
+        @media (max-width: 767px) {
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; // Адаптивное расстояние между колонками
+
+        &>* {
+            flex: 1 1 calc(50% - 20px); // Динамическое распределение ширины
+
+            @media (max-width: 767px) {
+                flex: 1 1 100%;
+            }
+        }
+    }
+
+    &__section-title {
+        font-family: "Koulen", sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 181%;
+        letter-spacing: 0.36em;
+        color: #121b25;
+        margin-bottom: 15px;
+
+        @media (max-width: 767px) {
+            font-size: 28px;
+        }
+    }
+
+    &__text {
+        font-family: "K2D", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0.36em;
+        color: #121b25;
+        max-width: 470px;
+        margin-bottom: 100px;
+
+        @media (max-width: 767px) {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__image {
+        border-radius: 28px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+
+        @media (max-width: 767px) {
+            margin: 0 auto;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    &__column {
+        margin-left: -22px;
+        max-width: 715px;
+
+        .text__column {
+            margin-left: 93px;
+            font-size: 24px;
+            max-width: 373px;
+            padding-top: 50px;
+
+            @media (max-width: 767px) {
+                margin-left: 0;
+                font-size: 18px;
+                text-align: center;
+                padding-top: 20px;
+            }
+        }
+    }
+
+    &__support {
+        display: flex;
+        gap: 30px;
+
+        &__left {
+            flex: 1 1 60%;
+            max-width: 60%;
+
+            @media (max-width: 767px) {
+                max-width: 100%;
+            }
+        }
+
+
+
+        &__image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        &-title {
+            font-family: "Koulen", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 181%;
+            color: #000;
+            max-width: 565px;
+            letter-spacing: 0.36em;
+            margin-bottom: 15px;
+
+            @media (max-width: 767px) {
+                font-size: 28px;
+                text-align: center;
+            }
+        }
+
+        &-text {
+            width: 564px;
+            font-family: "K2D", sans-serif;
+            font-size: 20px;
+            line-height: 130%;
+            letter-spacing: 0.36em;
+            color: #000;
+            margin-bottom: 20px;
+
+            @media (max-width: 767px) {
+                font-size: 16px;
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        span {
+            font-weight: 800;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        &-item {
+            font-family: "K2D", sans-serif;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 20px;
+            line-height: 130%;
+            letter-spacing: 0.36em;
+            color: #444;
+
+            @media (max-width: 767px) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__button {
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 2px solid rgba(0, 0, 0, 0.9);
+        border-radius: 21px;
+        width: 172px;
+        height: 55px;
+        font-family: "K2D", sans-serif;
+        font-size: 16px;
+        line-height: 181%;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #000;
+        background: transparent;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: rgba(255, 165, 0, 0.8);
+            z-index: -1;
+            transition: width 0.4s ease;
+        }
+
+        &:hover::before {
+            width: 100%;
+        }
+
+        &:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 767px) {
+            width: 150px;
+            height: 50px;
+            font-size: 14px;
+        }
+    }
+}
+
+
+//////////ADVANTAGES//////////////
