@@ -93,3 +93,105 @@ const partnersSlider = new Swiper('.partners__slider', {
         },
     },
 });
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     // Выбираем все элементы, которые нужно анимировать
+//     const sections = document.querySelectorAll(".advantages__left, .advantages__right, .advantages__text, .advantages__image");
+
+//     // Создаем наблюдатель для отслеживания появления секций в зоне видимости
+//     const observer = new IntersectionObserver(
+//         (entries, observer) => {
+//             entries.forEach((entry) => {
+//                 if (entry.isIntersecting) {
+//                     // Добавляем класс "animated", когда элемент становится видимым
+//                     entry.target.classList.add("animated");
+//                     observer.unobserve(entry.target); // Прекращаем наблюдение после того, как анимация сработала
+//                 }
+//             });
+//         },
+//         { threshold: 0.1 } // Секция считается видимой, если она на 50% в области видимости
+//     );
+
+//     // Применяем наблюдатель ко всем выбранным элементам
+//     sections.forEach((section) => {
+//         observer.observe(section);
+//     });
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(
+        ".advantages__left, .advantages__right, .advantages__text, .advantages__image"
+    );
+
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+    if (!isMobile) {
+        // Анимация для ПК
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animated");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+    } else {
+        // Анимация для мобильных устройств
+        const handleScroll = () => {
+            sections.forEach((section) => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionBottom = section.getBoundingClientRect().bottom;
+
+                if (sectionTop < window.innerHeight && sectionBottom >= 0) {
+                    section.classList.add("animated");
+                }
+            });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Инициализируем проверку при загрузке страницы
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const footer = document.querySelector(".footer");
+
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+    if (!isMobile) {
+        // Анимация для ПК
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animated");
+                        observer.unobserve(entry.target); // Останавливаем наблюдение после срабатывания
+                    }
+                });
+            },
+            { threshold: 0.1 } // Срабатывает, когда 10% элемента видны
+        );
+
+        observer.observe(footer);
+    } else {
+        // Анимация для мобильных устройств
+        const handleScroll = () => {
+            const footerTop = footer.getBoundingClientRect().top;
+            const footerBottom = footer.getBoundingClientRect().bottom;
+
+            if (footerTop < window.innerHeight && footerBottom >= 0) {
+                footer.classList.add("animated");
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Инициализируем проверку при загрузке страницы
+    }
+});
