@@ -822,7 +822,7 @@ body {
 }
 @media (max-width: 375px) {
   .advantages__button {
-    bottom: -75vh;
+    bottom: -85vh;
   }
 }
 .advantages__right {
