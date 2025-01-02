@@ -28,7 +28,6 @@ body {
     background-color: #fdf9f9;
     position: relative;
     color: #fff;
-    // overflow-x: hidden;
     scroll-behavior: smooth;
 
     @media(max-width: 767px) {
@@ -49,7 +48,7 @@ body {
     background: #fff;
     border-radius: 43px;
     box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    padding: clamp(15px, 2vw, 20px); // Устанавливаем динамический padding
+    padding: clamp(15px, 2vw, 20px);
     margin-top: 10px;
     margin-left: 10px;
 
@@ -61,9 +60,9 @@ body {
 
     @media (min-width: 1900px) and (max-width: 3500px) {
         width: 95%;
-        max-width: 100%; // Убираем ограничение ширины на больших экранах
-        padding: clamp(15px, 2vw, 50px); // Увеличиваем padding для больших экранов
-        margin-left: clamp(20px, 2vw, 30px); // Динамический отступ слева
+        max-width: 100%;
+        padding: clamp(15px, 2vw, 50px);
+        margin-left: clamp(20px, 2vw, 30px);
     }
 
     &__container {
@@ -76,7 +75,7 @@ body {
     }
 
     &__logo {
-        margin-left: -7vh; // Сдвигаем логотип левее
+        margin-left: -7vh;
 
         @media (min-width: 1900px) and (max-width: 3500px) {
             margin-left: -10vh;
@@ -88,13 +87,17 @@ body {
     }
 
     &__logo img {
-        max-height: clamp(50px, 8vw, 70px); // Логотип с динамической высотой
+        max-height: clamp(50px, 8vw, 70px);
+
+        @media(max-width: 1024px) {
+            margin-left: 55px;
+        }
     }
 
     &__nav {
         @media (min-width: 1900px) and (max-width: 3500px) {
             display: flex;
-            flex-grow: 1; // Это заставит навигацию занимать всё доступное пространство
+            flex-grow: 1;
             justify-content: flex-end;
         }
 
@@ -105,15 +108,19 @@ body {
 
     &__list {
         display: flex;
-        gap: clamp(20px, 4vw, 45px); // Динамический gap между элементами
+        gap: clamp(20px, 4vw, 45px);
         list-style: none;
 
         @media(max-width: 1900px) {
             margin-left: 29vh;
         }
 
+        @media(max-width: 1024px) {
+            margin-left: 0;
+        }
+
         @media (min-width: 1900px) and (max-width: 3500px) {
-            gap: clamp(35px, 7vw, 40px); // Увеличиваем расстояние между элементами на больших экранах
+            gap: clamp(35px, 7vw, 40px);
             margin-right: -15vh;
         }
     }
@@ -121,9 +128,9 @@ body {
     &__link {
         font-family: "Konkhmer Sleokchher", sans-serif;
         font-weight: 400;
-        font-size: clamp(16px, 2.5vw, 20px); // Динамический размер шрифта
+        font-size: clamp(16px, 2.5vw, 20px);
         line-height: 181%;
-        letter-spacing: clamp(0.2em, 0.5vw, 0.32em); // Динамическое расстояние между буквами
+        letter-spacing: clamp(0.2em, 0.5vw, 0.32em);
         color: #000;
         text-transform: uppercase;
         position: relative;
@@ -131,6 +138,11 @@ body {
 
         @media (min-width: 1900px) and (max-width: 3500px) {
             letter-spacing: clamp(0.3em, 0.6vw, 0.46em);
+        }
+
+        @media(max-width:1024px) {
+            font-size: clamp(12px, -0.5vw, 17px);
+            letter-spacing: 0;
         }
 
         &:hover,
@@ -152,7 +164,7 @@ body {
 
     &__link {
         &:nth-child(1) {
-            // Сохраняем HOME на месте
+
 
             @media (min-width: 1900px) and (max-width: 3500px) {
                 margin-left: 4vh;
@@ -259,6 +271,17 @@ body {
 
         }
     }
+
+
+}
+
+.no-scroll {
+    overflow: hidden;
+    /* Отключает прокрутку */
+    height: 100vh;
+    /* Фиксирует высоту экрана */
+    width: 100vw;
+    /* Фиксирует ширину экрана */
 }
 
 ////////////</HEADER/////////////////////////////////
@@ -289,13 +312,13 @@ body {
         height: 100%;
         background-size: cover;
         background-position: center;
-        opacity: 0; // По умолчанию скрыты
-        transform: scale(1.1); // Легкий зум для эффекта "песка"
+        opacity: 0;
+        transform: scale(1.1);
         transition: opacity 1s ease, transform 1s ease;
 
         &.swiper-slide-active {
-            opacity: 1; // Плавное появление активного слайда
-            transform: scale(1); // Возврат масштаба
+            opacity: 1;
+            transform: scale(1);
         }
     }
 
@@ -314,13 +337,15 @@ body {
         line-height: 118%;
         letter-spacing: 0.21em;
         top: -25vh;
-        opacity: 0; // Изначально скрыт
-        transform: translateY(20px); // Смещение вниз
+        opacity: 0;
+        transform: translateY(20px);
         transition: opacity 0.8s ease, transform 0.8s ease;
 
+
+
         &.visible {
-            opacity: 1; // Плавное появление текста
-            transform: translateY(0); // Возврат в изначальное положение
+            opacity: 1;
+            transform: translateY(0);
         }
 
         @media (min-width: 1900px) and (max-width: 3500px) {
@@ -332,9 +357,15 @@ body {
             line-height: 113%;
             letter-spacing: 0.21em;
             max-width: 399px;
-            top: -40vh;
+            top: -37vh;
+        }
+
+        @media (max-width: 375px) {
+            top: -25vh;
         }
     }
+
+
 
     &__subtitle {
         width: 634px;
@@ -345,23 +376,31 @@ body {
         line-height: 130%;
         letter-spacing: 0.36em;
         top: -24vh;
-        opacity: 0; // Изначально скрыт
-        transform: translateX(-100%); // Выезд из-за левого края
+        opacity: 0;
+        transform: translateX(-100%);
         transition: opacity 1.5s ease, transform 1.5s ease;
 
+
+
         &.visible {
-            opacity: 1; // Плавное появление текста
-            transform: translateX(0); // Возврат в изначальное положение
+            opacity: 1;
+            transform: translateX(0);
         }
 
         @media (min-width: 1900px) and (max-width: 3500px) {
             top: -35vh;
         }
 
+
+
         @media (max-width: 767px) {
             font-size: 24px;
-            top: -40vh;
+            top: -37vh;
             max-width: 393px;
+        }
+
+        @media (max-width: 375px) {
+            top: -25vh;
         }
 
         span {
@@ -399,7 +438,7 @@ body {
     gap: 15px;
     z-index: 1000;
 
-    // Каждая иконка
+
     .icon {
         width: 50px;
         height: 50px;
@@ -412,18 +451,18 @@ body {
         transition: background-color 0.3s, transform 0.3s;
 
         &:hover {
-            background-color: #0077b5; // Цвет при наведении (например, для LinkedIn)
+            background-color: #0077b5;
             transform: scale(1.1);
         }
 
-        // Ссылка внутри иконки
+
         a {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
             height: 100%;
-            color: #000; // Цвет текста или иконки
+            color: #000;
             text-decoration: none;
 
             img {
@@ -435,6 +474,49 @@ body {
     }
 }
 
+.hero__title--second {
+    font-family: "Abhaya Libre ExtraBold", sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+
+    line-height: 118%;
+    letter-spacing: 0.21em;
+    top: -27vh;
+
+    @media (min-width: 1900px) and (max-width: 3500px) {
+        top: -28vh;
+        font-size: 60px;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 35px;
+        top: -24vh;
+
+    }
+
+    @media (max-width: 375px) {
+        font-size: 26px;
+        top: -23vh;
+    }
+}
+
+.hero__subtitle--second {
+    font-family: "Abhaya Libre ExtraBold", sans-serif;
+    top: -21vh;
+
+    @media (max-width: 767px) {
+
+        top: -22vh;
+        font-size: 22px;
+    }
+
+    @media (max-width: 375px) {
+        font-size: 16px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+    }
+}
 
 //////////</HERO//////////////
 
@@ -446,6 +528,7 @@ body {
     padding: 20px 0;
     border-radius: 61px;
     margin: 10px;
+    margin-left: 20px;
 
     @media(max-width: 767px) {
         margin: 0;
@@ -458,7 +541,7 @@ body {
         .swiper-wrapper {
             display: flex;
             transition: transform 0.3s ease-in-out;
-            /* Плавность для движения слайдов */
+
         }
 
         .swiper-slide {
@@ -466,11 +549,11 @@ body {
             padding: 10px;
             border-radius: 10px;
             transition: transform 0.3s ease-in-out;
-            /* Плавность для слайдов */
+
 
             &:hover {
                 transform: scale(1.05);
-                /* Легкое увеличение */
+
             }
 
             img {
@@ -480,7 +563,7 @@ body {
                 margin: 0 auto;
                 filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
                 transition: transform 0.3s ease-in-out;
-                /* Плавность при изменении */
+
             }
         }
     }
@@ -505,17 +588,21 @@ body {
 
 .advantages {
     position: relative;
-    padding: clamp(20px, 5vw, 60px); // Адаптивные отступы
+    padding: clamp(20px, 5vw, 60px);
     background-color: #f9f9f9;
     padding-top: 180px;
     padding-bottom: 100px;
+
+    @media(max-width: 767px) {
+        padding-top: 97px;
+    }
 
     &__container {
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: clamp(20px, 3vw, 40px); // Адаптивный отступ между элементами
+        gap: clamp(20px, 3vw, 40px);
     }
 
     &__title {
@@ -531,7 +618,8 @@ body {
 
         @media (max-width: 767px) {
             font-size: 28px;
-            margin-left: 15px;
+            margin-left: 38px;
+
         }
     }
 
@@ -554,10 +642,10 @@ body {
     &__content {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px; // Адаптивное расстояние между колонками
+        gap: 20px;
 
         &>* {
-            flex: 1 1 calc(50% - 20px); // Динамическое распределение ширины
+            flex: 1 1 calc(50% - 20px);
 
             @media (max-width: 767px) {
                 flex: 1 1 100%;
@@ -574,9 +662,14 @@ body {
         color: #121b25;
         margin-bottom: 15px;
 
+        @media(max-width: 1024px) {
+            margin-left: 30px;
+        }
+
         @media (max-width: 767px) {
             font-size: 28px;
             margin-left: 24px;
+            margin-bottom: 30px;
         }
     }
 
@@ -589,6 +682,10 @@ body {
         color: #121b25;
         max-width: 470px;
         margin-bottom: 100px;
+
+        @media(max-width: 1024px) {
+            margin: auto;
+        }
 
         @media (max-width: 767px) {
             font-size: 16px;
@@ -616,6 +713,10 @@ body {
         flex-wrap: wrap;
         gap: 20px;
 
+        @media(max-width: 1024px) {
+            flex-direction: column-reverse;
+        }
+
         @media (max-width: 767px) {
             flex-direction: column-reverse;
             gap: 15px;
@@ -632,8 +733,12 @@ body {
             max-width: 373px;
             padding-top: 50px;
 
+            @media(max-width: 1024px) {
+                max-width: none;
+            }
+
             @media (max-width: 767px) {
-                margin-left: 0;
+                margin-left: 16px;
                 font-size: 18px;
                 text-align: center;
                 padding-top: 20px;
@@ -645,20 +750,16 @@ body {
         display: flex;
         gap: 30px;
 
+        @media(max-width: 1024px) {
+            flex-direction: column;
+        }
+
         @media(max-width:767px) {
             flex-direction: column;
             gap: 50px;
         }
 
-        &__right {
-            order: 1;
 
-            /* Показываем первым элементом */
-            @media (max-width: 767px) {
-                margin: 0 auto;
-                /* Выравниваем картинку */
-            }
-        }
 
         &__left {
             flex: 1 1 60%;
@@ -781,19 +882,30 @@ body {
             color: #fff;
         }
 
+
+
+        @media(max-width: 1024px) {
+            position: absolute;
+            bottom: -95vh;
+        }
+
         @media (max-width: 767px) {
             width: 150px;
             height: 50px;
             font-size: 14px;
             position: absolute;
-            bottom: -62vh;
+            bottom: -55vh;
+        }
+
+        @media (max-width: 375px) {
+            bottom: -70vh;
         }
     }
 
     &__right {
         order: 1;
 
-        /* Показываем первым элементом */
+
         @media (max-width: 767px) {
             margin-right: 17px;
             position: absolute;
@@ -833,12 +945,18 @@ body {
     opacity: 0;
     transition: opacity 1s ease-out, transform 1s ease-out;
 
-    @media (max-width: 767px) {
-        opacity: 1;
-        transform: none;
-        transition: none; // Убираем анимацию на мобильных
+    @media(max-width:1024px) {
         position: relative;
         top: -13px;
+
+    }
+
+    @media (max-width: 767px) {
+        opacity: 1;
+        position: relative;
+        top: -13px;
+        width: 92%;
+        margin-left: 10px;
     }
 }
 
@@ -861,12 +979,10 @@ body {
 
 .footer {
     background-color: #0f172a;
-    /* Тёмно-синий фон */
     color: #fff;
-    /* Белый текст */
     padding: 2rem 1rem;
 
-    /* Анимация появления */
+
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.6s ease, transform 0.6s ease;

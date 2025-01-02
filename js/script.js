@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const menuIcon = document.querySelector(".menu-icon");
     const menu = document.querySelector(".menu");
+    const body = document.body; // Получаем элемент <body>
 
     if (menuIcon && menu) {
         menuIcon.addEventListener("click", () => {
             menu.classList.toggle("_active");
             menuIcon.classList.toggle("_active");
+            body.classList.toggle("no-scroll"); // Блокируем/разблокируем прокрутку
         });
     } else {
         console.error("Menu or Menu Icon not found in the document.");
