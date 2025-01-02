@@ -817,12 +817,12 @@ body {
     height: 50px;
     font-size: 14px;
     position: absolute;
-    bottom: -61vh;
+    bottom: -53vh;
   }
 }
 @media (max-width: 375px) {
   .advantages__button {
-    bottom: -60vh;
+    bottom: -70vh;
   }
 }
 .advantages__right {
