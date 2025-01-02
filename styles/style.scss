@@ -502,6 +502,9 @@ body {
 
 .hero__subtitle--second {
     font-family: "Abhaya Libre ExtraBold", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
     top: -21vh;
 
     @media (max-width: 767px) {
