@@ -817,7 +817,7 @@ body {
     height: 50px;
     font-size: 14px;
     position: absolute;
-    bottom: -55vh;
+    bottom: -61vh;
   }
 }
 @media (max-width: 375px) {
