@@ -30,12 +30,6 @@ body {
   color: #fff;
   scroll-behavior: smooth;
 }
-@media (max-width: 767px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
-}
 
 .header {
   position: absolute;
@@ -324,7 +318,7 @@ body {
     line-height: 113%;
     letter-spacing: 0.21em;
     max-width: 399px;
-    top: -37vh;
+    top: -25vh;
   }
 }
 @media (max-width: 375px) {
@@ -357,7 +351,7 @@ body {
 @media (max-width: 767px) {
   .hero__subtitle {
     font-size: 24px;
-    top: -37vh;
+    top: -16vh;
     max-width: 393px;
   }
 }
@@ -439,13 +433,13 @@ body {
 }
 @media (min-width: 1900px) and (max-width: 3500px) {
   .hero__title--second {
-    top: -28vh;
+    top: -24vh;
     font-size: 60px;
   }
 }
 @media (max-width: 767px) {
   .hero__title--second {
-    font-size: 35px;
+    font-size: 23px;
     top: -24vh;
   }
 }
@@ -465,7 +459,7 @@ body {
 }
 @media (max-width: 767px) {
   .hero__subtitle--second {
-    top: -22vh;
+    top: -20vh;
     font-size: 22px;
   }
 }
