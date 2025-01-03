@@ -318,7 +318,7 @@ body {
     line-height: 113%;
     letter-spacing: 0.21em;
     max-width: 399px;
-    top: -25vh;
+    top: -22vh;
   }
 }
 @media (max-width: 375px) {
@@ -442,7 +442,7 @@ body {
 }
 @media (max-width: 767px) {
   .hero__title--second {
-    font-size: 20px;
+    font-size: 22px;
     top: -24vh;
   }
 }
@@ -450,7 +450,7 @@ body {
   .hero__title--second {
     flex-wrap: wrap;
     display: flex;
-    font-size: 19px;
+    font-size: 23px;
     top: -23vh;
   }
 }
