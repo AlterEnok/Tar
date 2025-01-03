@@ -358,7 +358,7 @@ body {
         }
 
         @media (max-width: 375px) {
-            top: -16vh;
+            top: -15vh;
         }
     }
 
@@ -399,7 +399,6 @@ body {
         @media (max-width: 375px) {
             top: -12vh;
             font-size: 20px;
-
             flex-wrap: wrap;
             display: flex
         }
@@ -490,13 +489,16 @@ body {
     }
 
     @media (max-width: 767px) {
-        font-size: 23px;
+        font-size: 20px;
         top: -24vh;
 
     }
 
     @media (max-width: 375px) {
-        font-size: 26px;
+
+        flex-wrap: wrap;
+        display: flex;
+        font-size: 19px;
         top: -23vh;
     }
 }
