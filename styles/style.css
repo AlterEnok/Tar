@@ -814,13 +814,13 @@ body {
 @media (max-width: 767px) {
   .advantages__button {
     bottom: 53px;
-    left: 23vh;
+    left: 24vh;
   }
 }
 @media (max-width: 375px) {
   .advantages__button {
     bottom: 50px;
-    left: 26vh;
+    left: 27vh;
   }
 }
 .advantages__right {
