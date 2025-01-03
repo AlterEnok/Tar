@@ -591,7 +591,7 @@ body {
     padding: clamp(20px, 5vw, 60px);
     background-color: #f9f9f9;
     padding-top: 180px;
-    padding-bottom: 100px;
+    padding-bottom: 163px;
 
     @media(max-width: 767px) {
         padding-top: 97px;
@@ -843,24 +843,23 @@ body {
 
     &__button {
         position: absolute;
-        bottom: -35px;
-        left: 50%;
+        bottom: 30px;
+        left: 30%;
         transform: translateX(-50%);
         border: 2px solid rgba(0, 0, 0, 0.9);
         border-radius: 21px;
-        width: 172px;
-        height: 55px;
+        width: clamp(140px, 20vw, 172px);
+        height: clamp(45px, 7vw, 55px);
         font-family: "K2D", sans-serif;
-        font-size: 16px;
+        font-size: clamp(12px, 3vw, 16px);
         line-height: 181%;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         color: #000;
         background: transparent;
         cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        z-index: 0;
+        z-index: 5;
+        overflow: hidden; // Добавил, чтобы эффект не выходил за пределы кнопки
 
         &::before {
             content: "";
@@ -871,6 +870,7 @@ body {
             height: 100%;
             background-color: rgba(251, 117, 7, 0.8);
             z-index: -1;
+            border-radius: inherit; // Наследует скругление от кнопки
             transition: width 0.4s ease;
         }
 
@@ -882,23 +882,19 @@ body {
             color: #fff;
         }
 
-
-
-        @media(max-width: 1024px) {
-            position: absolute;
-            bottom: -95vh;
+        @media (max-width: 1024px) {
+            bottom: 50px;
+            left: 36vh;
         }
 
         @media (max-width: 767px) {
-            width: 150px;
-            height: 50px;
-            font-size: 14px;
-            position: absolute;
-            bottom: -63vh;
+            bottom: 53px;
+            left: 23vh;
         }
 
         @media (max-width: 375px) {
-            bottom: -85vh;
+            bottom: 50px;
+            left: 26vh;
         }
     }
 
