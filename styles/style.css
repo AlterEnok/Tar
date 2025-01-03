@@ -323,7 +323,7 @@ body {
 }
 @media (max-width: 375px) {
   .hero__title {
-    top: -25vh;
+    top: -16vh;
   }
 }
 .hero__subtitle {
@@ -357,7 +357,10 @@ body {
 }
 @media (max-width: 375px) {
   .hero__subtitle {
-    top: -25vh;
+    top: -12vh;
+    font-size: 20px;
+    flex-wrap: wrap;
+    display: flex;
   }
 }
 .hero__subtitle span {

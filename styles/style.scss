@@ -358,7 +358,7 @@ body {
         }
 
         @media (max-width: 375px) {
-            top: -25vh;
+            top: -16vh;
         }
     }
 
@@ -397,7 +397,11 @@ body {
         }
 
         @media (max-width: 375px) {
-            top: -25vh;
+            top: -12vh;
+            font-size: 20px;
+
+            flex-wrap: wrap;
+            display: flex
         }
 
         span {
