@@ -7,15 +7,22 @@
     <title>TAR | Messdienst</title>
     <link rel="icon" href="img/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/uber-uns.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Julius+Sans+One&family=K2D&family=Koulen&family=Konkhmer+Sleokchher&family=Kaisei+HarunoUmi&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Julius+Sans+One&family=K2D&family=Koulen&family=Konkhmer+Sleokchher&family=Kaisei+HarunoUmi&family=Kite+One&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
-
+    <div class="preloader">
+        <div class="preloader__ball"></div>
+        <div class="preloader__ball"></div>
+        <div class="preloader__ball"></div>
+    </div>
     <header class="header">
         <div class="header__container">
             <div class="header__logo">
@@ -23,8 +30,8 @@
             </div>
             <nav class="header__nav">
                 <ul class="header__list">
-                    <li><a href="#home" class="header__link active">Home</a></li>
-                    <li><a href="#about" class="header__link">Über Uns</a></li>
+                    <li><a href="Home.html" class="header__link active">Home</a></li>
+                    <li><a href="uber-uns.html" class="header__link">Über Uns</a></li>
                     <li><a href="#angebot" class="header__link">Angebot</a></li>
                     <li><a href="#produkte" class="header__link">Produkte</a></li>
                     <li><a href="#partner" class="header__link">Partner</a></li>
@@ -40,8 +47,8 @@
 
                 <ul class="menu__list">
 
-                    <li><a href="#home" class="header__link active  menu__header__link">Home</a></li>
-                    <li><a href="#about" class="header__link  menu__header__link">Über Uns</a></li>
+                    <li><a href="Home.html" class="header__link active  menu__header__link">Home</a></li>
+                    <li><a href="uber-uns.html" class="header__link  menu__header__link">Über Uns</a></li>
                     <li><a href="#angebot" class="header__link menu__header__link">Angebot</a></li>
                     <li><a href="#produkte" class="header__link menu__header__link">Produkte</a></li>
                     <li><a href="#partner" class="header__link menu__header__link">Partner</a></li>
@@ -222,9 +229,8 @@
                         </li>
                     </ul>
 
-                    <!-- <button class="advantages__button">Über uns</button> -->
                 </div>
-                <button class="advantages__button">Über uns</button>
+                <a href="uber-uns.html" class="advantages__button">Über uns</a>
                 <div class="advantages__right">
                     <img src="img/advantages-3.png" alt="Support" class="advantages__image">
                 </div>
@@ -239,11 +245,11 @@
             <div class="footer__section footer__section--links">
                 <h3 class="footer__title">Quick Link</h3>
                 <ul class="footer__list">
-                    <li class="footer__item"><a href="#home" class="footer__link">Home</a></li>
+                    <li class="footer__item"><a href="Home.html" class="footer__link">Home</a></li>
                     <li class="footer__item"><a href="#angebot" class="footer__link">Angebot</a></li>
                     <li class="footer__item"><a href="#produkte" class="footer__link">Produkte</a></li>
                     <li class="footer__item"><a href="#partner" class="footer__link">Partner</a></li>
-                    <li class="footer__item"><a href="#uber-uns" class="footer__link">Über uns</a></li>
+                    <li class="footer__item"><a href="uber-uns.html" class="footer__link">Über uns</a></li>
                 </ul>
             </div>
             <div class="footer__section footer__section--contact">

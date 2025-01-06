@@ -96,29 +96,6 @@ const partnersSlider = new Swiper('.partners__slider', {
     },
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     // Выбираем все элементы, которые нужно анимировать
-//     const sections = document.querySelectorAll(".advantages__left, .advantages__right, .advantages__text, .advantages__image");
-
-//     // Создаем наблюдатель для отслеживания появления секций в зоне видимости
-//     const observer = new IntersectionObserver(
-//         (entries, observer) => {
-//             entries.forEach((entry) => {
-//                 if (entry.isIntersecting) {
-//                     // Добавляем класс "animated", когда элемент становится видимым
-//                     entry.target.classList.add("animated");
-//                     observer.unobserve(entry.target); // Прекращаем наблюдение после того, как анимация сработала
-//                 }
-//             });
-//         },
-//         { threshold: 0.1 } // Секция считается видимой, если она на 50% в области видимости
-//     );
-
-//     // Применяем наблюдатель ко всем выбранным элементам
-//     sections.forEach((section) => {
-//         observer.observe(section);
-//     });
-// });
 
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll(
@@ -196,4 +173,66 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("scroll", handleScroll);
         handleScroll(); // Инициализируем проверку при загрузке страницы
     }
+});
+
+/*GSAP */
+document.querySelectorAll('.link').forEach(link => {
+    link.addEventListener('click', function (event) {
+        event.preventDefault(); // отменяем стандартный переход
+        const href = this.getAttribute('href');
+
+        // Анимация исчезновения перед уходом
+        gsap.to('body', {
+            opacity: 0,
+            duration: 1,
+            onComplete: () => {
+                window.location.href = href; // Переход после анимации
+            }
+        });
+    });
+});
+
+// Анимация появления при загрузке
+window.addEventListener('load', () => {
+    gsap.from('body', {
+        opacity: 0,
+        duration: 1
+    });
+});
+
+document.querySelectorAll('.header__link').forEach(link => {
+    if (link.href === window.location.href) {
+        link.classList.add('active');
+    } else {
+        link.classList.remove('active');
+    }
+});
+
+
+/*PRELOADER */
+
+window.addEventListener('load', function () {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.classList.add('hidden');
+    }
+});
+
+// Для анимации при клике на ссылки (исключаем якорные ссылки и ссылки, ведущие на текущую страницу)
+const links = document.querySelectorAll('a[href]');
+links.forEach(link => {
+    link.addEventListener('click', function (event) {
+        const href = link.getAttribute('href');
+        const preloader = document.querySelector('.preloader');
+
+        // Игнорировать якорные ссылки и ссылки на текущую страницу
+        if (!preloader || href.startsWith('#') || href === window.location.pathname) return;
+
+        event.preventDefault();
+        preloader.classList.remove('hidden');
+
+        setTimeout(() => {
+            window.location.href = link.href;
+        }, 1000);
+    });
 });
