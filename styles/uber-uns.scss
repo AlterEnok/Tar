@@ -3,7 +3,11 @@ html {
 }
 
 body {
-    overflow-x: hidden;
+
+
+    @media(max-width: 767px) {
+        overflow-x: clip;
+    }
 }
 
 .page {
