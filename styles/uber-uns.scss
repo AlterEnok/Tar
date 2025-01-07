@@ -215,6 +215,10 @@ body {
         word-wrap: break-word;
         margin-left: -30vh;
 
+        @media (min-width: 1900px) and (max-width: 3500px) {
+            margin-left: -23vh;
+        }
+
         @media(max-width: 1024px) {
             width: 667px;
             margin-left: 4vh;

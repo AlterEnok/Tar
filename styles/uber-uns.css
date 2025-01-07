@@ -181,6 +181,11 @@ html {
   word-wrap: break-word;
   margin-left: -30vh;
 }
+@media (min-width: 1900px) and (max-width: 3500px) {
+  .about .about__text {
+    margin-left: -23vh;
+  }
+}
 @media (max-width: 1024px) {
   .about .about__text {
     width: 667px;
