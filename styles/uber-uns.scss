@@ -2,6 +2,10 @@ html {
     overflow-x: hidden;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .page {
     display: flex;
     flex-direction: column;
@@ -162,18 +166,20 @@ html {
             }
 
             @media(max-width:767px) {
-                width: 410px;
-                margin-left: 2vh;
+
+                width: 337px;
+                margin-left: 5vh;
+                margin-bottom: 96px;
             }
 
-            @media(max-width:375px) {
+            // @media(max-width:375px) {
 
-                position: relative;
-                width: 353px;
-                height: 418px;
-                margin-left: 2vh;
-                margin-bottom: 85px;
-            }
+            //     position: relative;
+            //     width: 353px;
+            //     height: 418px;
+            //     margin-left: 2vh;
+            //     margin-bottom: 85px;
+            // }
 
             &--img {
                 width: 100%;
@@ -213,11 +219,11 @@ html {
         @media(max-width:767px) {
             font-size: 12px;
             line-height: 1.2;
-            width: 438px;
+            width: 410px;
             margin-left: 1vh;
         }
 
-        @media(max-width:375px) {
+        @media(max-width:385px) {
             width: 350px;
             margin-left: 4vh;
 
@@ -271,14 +277,14 @@ html {
             }
 
             @media(max-width:767px) {
-                width: 361px;
+                width: 354px;
                 line-height: 127%;
-                letter-spacing: 0.1em;
+                letter-spacing: 0.2em;
             }
 
-            @media(max-width:375px) {
-                width: 350px;
-                margin-left: -5vh;
+            @media(max-width:378px) {
+                width: 330px;
+                margin-left: -2vh;
             }
         }
 
