@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const menuIcon = document.querySelector(".menu-icon");
     const menu = document.querySelector(".menu");
-    const body = document.body; // Получаем элемент <body>
+    const body = document.body;
 
     if (menuIcon && menu) {
         menuIcon.addEventListener("click", () => {
             menu.classList.toggle("_active");
             menuIcon.classList.toggle("_active");
-            body.classList.toggle("no-scroll"); // Блокируем/разблокируем прокрутку
+            body.classList.toggle("no-scroll");
         });
     } else {
         console.error("Menu or Menu Icon not found in the document.");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const heroSlider = new Swiper('.hero__slider', {
     loop: true,
-    effect: 'cube', // Эффект cube для первого слайдера
+    effect: 'cube',
     cubeEffect: {
         shadow: true,
         shadowOffset: 20,
@@ -79,10 +79,10 @@ const partnersSlider = new Swiper('.partners__slider', {
     spaceBetween: 20,
     loop: true,
     autoplay: {
-        delay: 3000, // уменьшена задержка между слайдами
+        delay: 3000,
         disableOnInteraction: false,
     },
-    speed: 800, // уменьшена скорость перехода слайдов
+    speed: 800,
     breakpoints: {
         320: {
             slidesPerView: 1,
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Инициализируем проверку при загрузке страницы
+        handleScroll();
     }
 });
 
@@ -151,16 +151,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("animated");
-                        observer.unobserve(entry.target); // Останавливаем наблюдение после срабатывания
+                        observer.unobserve(entry.target);
                     }
                 });
             },
-            { threshold: 0.1 } // Срабатывает, когда 10% элемента видны
+            { threshold: 0.1 }
         );
 
         observer.observe(footer);
     } else {
-        // Анимация для мобильных устройств
+
         const handleScroll = () => {
             const footerTop = footer.getBoundingClientRect().top;
             const footerBottom = footer.getBoundingClientRect().bottom;
@@ -171,14 +171,14 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Инициализируем проверку при загрузке страницы
+        handleScroll();
     }
 });
 
 /*GSAP */
 document.querySelectorAll('.link').forEach(link => {
     link.addEventListener('click', function (event) {
-        event.preventDefault(); // отменяем стандартный переход
+        event.preventDefault();
         const href = this.getAttribute('href');
 
         // Анимация исчезновения перед уходом
@@ -186,7 +186,7 @@ document.querySelectorAll('.link').forEach(link => {
             opacity: 0,
             duration: 1,
             onComplete: () => {
-                window.location.href = href; // Переход после анимации
+                window.location.href = href;
             }
         });
     });
@@ -218,14 +218,14 @@ window.addEventListener('load', function () {
     }
 });
 
-// Для анимации при клике на ссылки (исключаем якорные ссылки и ссылки, ведущие на текущую страницу)
+
 const links = document.querySelectorAll('a[href]');
 links.forEach(link => {
     link.addEventListener('click', function (event) {
         const href = link.getAttribute('href');
         const preloader = document.querySelector('.preloader');
 
-        // Игнорировать якорные ссылки и ссылки на текущую страницу
+
         if (!preloader || href.startsWith('#') || href === window.location.pathname) return;
 
         event.preventDefault();
@@ -235,4 +235,47 @@ links.forEach(link => {
             window.location.href = link.href;
         }, 1000);
     });
+});
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const contactSection = document.querySelector(".contact__details");
+    const contactItems = document.querySelectorAll(".contact__item");
+
+    if (contactSection && contactItems) {
+
+        gsap.set(contactItems, { opacity: 0, y: -50 });
+
+
+        const thresholdValue = window.innerWidth <= 768 ? 0.4 : 0.9;
+
+
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+
+                        gsap.to(contactItems, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 1.5,
+                            ease: "power3.out",
+                            stagger: 0.3,
+                        });
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: thresholdValue }
+        );
+
+        observer.observe(contactSection);
+    }
 });

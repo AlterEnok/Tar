@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.contact {
+
+    // Intro section styles
+    &__intro {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 410px;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+
+        .contact__content {
+
+            margin-top: 12vh;
+            margin-bottom: -5vh;
+
+            .contact__title {
+                font-family: "Koulen", sans-serif;
+                font-weight: 400;
+                font-size: 44px;
+                line-height: 281%;
+                letter-spacing: 0.1em;
+                color: #fff;
+                border: 4px solid #f27b21;
+                width: 453px;
+                height: 121px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+
+                @media(max-width:767px) {
+                    width: 370px;
+                }
+
+                @media(max-width: 385px) {
+                    width: 352px;
+                }
+
+            }
+
+            .contact__breadcrumb {
+                font-family: "Koulen", sans-serif;
+                font-weight: 400;
+                font-size: 32px;
+                color: #fff;
+                line-height: 97%;
+                letter-spacing: 0.36em;
+                padding-bottom: 5px;
+                margin-top: 35px;
+                transition: color 0.3s, border-bottom 0.3s;
+                border: none;
+                margin-left: 1vh;
+                position: relative;
+                top: 15px;
+
+                @media (min-width: 1900px) and (max-width: 3500px) {
+                    margin-left: -1vh;
+                }
+
+                &:hover {
+                    color: #fb7507;
+                    border-bottom: 2px solid #fb7507;
+                }
+            }
+        }
+    }
+
+    // Contact details section styles
+    &__details {
+        padding: 50px 20px;
+        background-color: #f9f9f9;
+        padding-bottom: 170px;
+
+        .contact__container {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            .contact__details--title {
+                font-family: "Koulen", sans-serif;
+                font-weight: 400;
+                font-size: 32px;
+                line-height: 181%;
+                letter-spacing: 0.13em;
+                color: #000;
+                position: relative;
+                right: -45vh;
+                padding-bottom: 80px;
+
+                @media (min-width: 1900px) and (max-width: 3500px) {
+                    right: -34vh;
+                }
+
+                @media(max-width:1024px) {
+                    right: -7vh;
+                }
+
+                @media(max-width:767px) {
+                    right: -5vh;
+                    letter-spacing: 0.4em;
+                }
+
+                @media(max-width:385px) {
+                    font-size: 40px;
+                    right: -8vh;
+                }
+            }
+
+            .contact__row {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                .contact__item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    padding: 20px;
+                    position: relative;
+                    /* Чтобы псевдоэлемент ::after позиционировался относительно этого блока */
+
+                    .contact__info--header {
+                        position: relative;
+                        /* Обязателен для правильного позиционирования ::after */
+
+                        &:not(:last-child)::after {
+                            content: "";
+                            position: absolute;
+                            top: -106px;
+                            right: -25vh;
+                            width: 2px;
+                            height: 34vh;
+                            transform: translateY(-10%);
+                            background-color: rgba(242, 123, 33, 0.44);
+
+                            @media (min-width: 1900px) and (max-width: 3500px) {
+                                right: -20vh;
+                            }
+
+                            @media(max-width:1026px) {
+                                top: -173px;
+                                right: -9vh;
+
+                            }
+
+                            @media(max-width:767px) {
+                                right: 6vh;
+                                transform: rotate(90deg);
+                                top: -5vh;
+                            }
+                        }
+                    }
+
+                    &:last-child .contact__info--header::after {
+                        display: none;
+
+
+                        @media(max-width:767px) {
+                            display: block;
+                        }
+                    }
+
+                    .contact__icon {
+                        width: 132px;
+                        height: 120px;
+                        margin-bottom: 10px;
+                    }
+
+                    .contact__info {
+                        font-family: "Koulen", sans-serif;
+                        max-width: 248px;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 181%;
+                        letter-spacing: 0.36em;
+                        color: #7f7f7f;
+                    }
+
+                    .contact__info--text {
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 181%;
+                        letter-spacing: 0.36em;
+                        color: #000;
+
+                        @media(max-width:1024px) {
+                            letter-spacing: 0.1em;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    // Map section styles
+    &__map {
+        padding-bottom: 50px;
+
+        iframe {
+            border: 0;
+            width: 100%;
+            height: 450px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+.footer {
+    margin-top: auto;
+    background-color: #0f172a;
+    color: #fff;
+    padding: 2rem 1rem;
+
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    &.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            /* Один столбец на малых экранах */
+            gap: 1.5rem;
+        }
+    }
+
+    &__section {
+        &--logo {
+            .footer__logo {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .footer__description {
+                margin-top: 1rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        &--links,
+        &--contact {
+            .footer__title {
+                font-family: "Koulen", sans-serif;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 181%;
+                letter-spacing: 0.16em;
+                margin-bottom: 1rem;
+
+                @media (max-width: 1024px) {
+                    font-size: 20px;
+                    letter-spacing: 0.1em;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 18px;
+                    line-height: 150%;
+                    letter-spacing: 0.08em;
+                }
+            }
+
+            .footer__list {
+                list-style: none;
+                padding: 0;
+
+                .footer__item {
+                    margin: 0.5rem 0;
+
+                    .footer__link {
+                        font-family: "Koulen", sans-serif;
+                        color: #fff;
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 180%;
+                        letter-spacing: 0.36em;
+                        position: relative;
+                        transition: color 0.3s ease;
+
+                        &:hover {
+                            color: #fb7507;
+                            /* Меняем цвет текста на оранжевый при наведении */
+                        }
+
+                        &:hover::after {
+                            content: "";
+                            position: absolute;
+                            bottom: -5px;
+                            /* Расстояние от текста до полоски */
+                            left: 0;
+                            width: 100%;
+                            height: 2px;
+                            background-color: #fb7507;
+                        }
+
+                        @media (max-width: 1024px) {
+                            font-size: 18px;
+                            letter-spacing: 0.3em;
+                        }
+
+                        @media (max-width: 768px) {
+                            font-size: 16px;
+                            letter-spacing: 0.2em;
+                        }
+                    }
+                }
+            }
+
+            .footer__address {
+                font-family: "Koulen", sans-serif;
+                width: 100%;
+                /* Адаптивная ширина */
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 181%;
+                letter-spacing: 0.18em;
+
+                @media (max-width: 1024px) {
+                    font-size: 14px;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 13px;
+                }
+
+                .footer__contact {
+                    color: #fff;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #fb7507;
+                        /* Меняем цвет текста на оранжевый при наведении */
+                    }
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 0.75rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1rem;
+    }
+
+    &__copyright {
+        font-family: "Julius Sans One", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 120%;
+        letter-spacing: -0.04em;
+    }
+}
