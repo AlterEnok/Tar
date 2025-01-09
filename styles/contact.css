@@ -139,7 +139,7 @@
 }
 @media (min-width: 1900px) and (max-width: 3500px) {
   .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
-    right: -20vh;
+    right: -14vh;
   }
 }
 @media (max-width: 1026px) {
