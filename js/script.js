@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.set(contactItems, { opacity: 0, y: -50 });
 
 
-        const thresholdValue = window.innerWidth <= 768 ? 0.4 : 0.9;
+        const thresholdValue = window.innerWidth <= 768 ? 0.4 : 1;
 
 
         const observer = new IntersectionObserver(

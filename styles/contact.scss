@@ -116,9 +116,13 @@
 
             .contact__row {
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
                 flex-wrap: wrap;
-                gap: 20px;
+                gap: 10px;
+
+                @media(max-width:767px) {
+                    justify-content: center;
+                }
 
                 .contact__item {
                     display: flex;
@@ -127,6 +131,11 @@
                     text-align: center;
                     padding: 20px;
                     position: relative;
+
+
+
+                    &:nth-child(2) {}
+
                     /* Чтобы псевдоэлемент ::after позиционировался относительно этого блока */
 
                     .contact__info--header {
@@ -137,14 +146,14 @@
                             content: "";
                             position: absolute;
                             top: -106px;
-                            right: -25vh;
+                            right: -26vh;
                             width: 2px;
                             height: 34vh;
                             transform: translateY(-10%);
                             background-color: rgba(242, 123, 33, 0.44);
 
                             @media (min-width: 1900px) and (max-width: 3500px) {
-                                right: -14vh;
+                                right: -18vh;
                             }
 
                             @media(max-width:1026px) {
