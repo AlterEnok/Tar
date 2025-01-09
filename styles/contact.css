@@ -113,10 +113,12 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
+  margin-left: 5vh;
 }
 @media (max-width: 767px) {
   .contact__details .contact__container .contact__row {
     justify-content: center;
+    margin-left: 0;
   }
 }
 .contact__details .contact__container .contact__row .contact__item {

@@ -119,9 +119,11 @@
                 justify-content: space-between;
                 flex-wrap: wrap;
                 gap: 10px;
+                margin-left: 5vh;
 
                 @media(max-width:767px) {
                     justify-content: center;
+                    margin-left: 0;
                 }
 
                 .contact__item {
