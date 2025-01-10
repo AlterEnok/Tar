@@ -70,7 +70,7 @@
                 top: 15px;
 
                 @media (min-width: 1900px) and (max-width: 3500px) {
-                    margin-left: clamp(-2vh, 1vh, -1vh);
+                    margin-left: clamp(-5vh, 11vh, 3vh);
                 }
 
 
@@ -112,8 +112,12 @@
                 right: clamp(-44vh, 30vw, -45vh);
                 padding-bottom: clamp(40px, 8vw, 80px);
 
+                @media (min-width: 1900px) and (max-width: 3500px) {
+                    right: clamp(-37vh, 30vw, -45vh);
+                }
+
                 @media(max-width:1336px) {
-                    right: clamp(-15vh, 10vw, -16vh);
+                    right: clamp(-11vh, 10vw, -16vh);
                 }
 
                 @media(max-width:1024px) {
@@ -137,6 +141,10 @@
                 flex-wrap: wrap;
                 gap: 10px;
                 margin-left: clamp(12vh, 5vw, 5vh);
+
+                @media (min-width: 1900px) and (max-width: 3500px) {
+                    margin-left: clamp(7vh, 5vw, 5vh);
+                }
 
                 @media(max-width:1024px) {
                     margin-left: 0;

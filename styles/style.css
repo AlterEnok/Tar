@@ -709,27 +709,34 @@ html {
   margin-top: 12vh;
   margin-bottom: -5vh;
 }
+@media (max-width: 1336px) {
+  .contact__intro .contact__content {
+    margin-top: 4vh;
+  }
+}
 .contact__intro .contact__content .contact__title {
   font-family: "Koulen", sans-serif;
   font-weight: 400;
-  font-size: clamp(28px, 5vw, 44px);
-  line-height: 281%;
+  font-size: clamp(28px, 5vw, 47px);
+  line-height: 245%;
   letter-spacing: 0.1em;
   color: #fff;
   border: 4px solid #f27b21;
-  width: clamp(280px, 50%, 453px);
-  height: clamp(90px, 20vh, 121px);
+  width: clamp(320px, 50%, 453px);
+  height: clamp(68px, 14vh, 121px);
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 @media (max-width: 767px) {
   .contact__intro .contact__content .contact__title {
-    width: clamp(300px, 90%, 370px);
+    width: clamp(190px, 90%, 352px);
+    height: clamp(68px, 10vh, 121px);
   }
 }
 @media (max-width: 385px) {
   .contact__intro .contact__content .contact__title {
-    width: clamp(280px, 90%, 352px);
+    width: clamp(190px, 90%, 352px);
+    height: clamp(68px, 10vh, 121px);
   }
 }
 .contact__intro .contact__content .contact__breadcrumb {
@@ -743,13 +750,23 @@ html {
   margin-top: 35px;
   transition: color 0.3s, border-bottom 0.3s;
   border: none;
-  margin-left: 1vh;
+  margin-left: 5vh;
   position: relative;
   top: 15px;
 }
 @media (min-width: 1900px) and (max-width: 3500px) {
   .contact__intro .contact__content .contact__breadcrumb {
     margin-left: -1vh;
+  }
+}
+@media (max-width: 767px) {
+  .contact__intro .contact__content .contact__breadcrumb {
+    margin-left: 2vh;
+  }
+}
+@media (max-width: 385px) {
+  .contact__intro .contact__content .contact__breadcrumb {
+    margin-left: 2vh;
   }
 }
 .contact__intro .contact__content .contact__breadcrumb:hover {
@@ -773,24 +790,29 @@ html {
   letter-spacing: clamp(0.1em, 1vw, 0.13em);
   color: #000;
   position: relative;
-  right: clamp(-10vh, 30vw, -45vh);
+  right: clamp(-44vh, 30vw, -45vh);
   padding-bottom: clamp(40px, 8vw, 80px);
+}
+@media (max-width: 1336px) {
+  .contact__details .contact__container .contact__details--title {
+    right: clamp(-21vh, 9vw, -14vh);
+  }
 }
 @media (max-width: 1024px) {
   .contact__details .contact__container .contact__details--title {
-    right: clamp(-5vh, 10vw, -7vh);
+    right: clamp(-9vh, 10vw, -9vh);
   }
 }
 @media (max-width: 767px) {
   .contact__details .contact__container .contact__details--title {
-    right: clamp(-3vh, 7vw, -5vh);
+    right: clamp(-7vh, 8vw, -6vh);
     letter-spacing: clamp(0.2em, 3vw, 0.4em);
   }
 }
 @media (max-width: 385px) {
   .contact__details .contact__container .contact__details--title {
     font-size: clamp(28px, 7vw, 40px);
-    right: clamp(-4vh, 9vw, -8vh);
+    right: clamp(-8vh, 9vw, -8vh);
   }
 }
 .contact__details .contact__container .contact__row {
@@ -798,7 +820,7 @@ html {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-  margin-left: clamp(0vh, 5vw, 5vh);
+  margin-left: clamp(12vh, 5vw, 5vh);
 }
 @media (max-width: 1024px) {
   .contact__details .contact__container .contact__row {
@@ -842,7 +864,12 @@ html {
   .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
     right: clamp(4vh, 10vw, 6vh);
     transform: rotate(90deg);
-    top: clamp(-4vh, 8vw, -5vh);
+    top: clamp(-2vh, 8vw, -5vh);
+  }
+}
+@media (max-width: 385px) {
+  .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
+    top: clamp(0vh, 8vw, -5vh);
   }
 }
 .contact__details .contact__container .contact__row .contact__item:last-child .contact__info--header::after {

@@ -66,7 +66,7 @@
 }
 @media (min-width: 1900px) and (max-width: 3500px) {
   .contact__intro .contact__content .contact__breadcrumb {
-    margin-left: -1vh;
+    margin-left: 3vh;
   }
 }
 @media (max-width: 767px) {
@@ -103,9 +103,14 @@
   right: clamp(-44vh, 30vw, -45vh);
   padding-bottom: clamp(40px, 8vw, 80px);
 }
+@media (min-width: 1900px) and (max-width: 3500px) {
+  .contact__details .contact__container .contact__details--title {
+    right: clamp(-37vh, 30vw, -45vh);
+  }
+}
 @media (max-width: 1336px) {
   .contact__details .contact__container .contact__details--title {
-    right: clamp(-15vh, 10vw, -16vh);
+    right: clamp(-11vh, 10vw, -16vh);
   }
 }
 @media (max-width: 1024px) {
@@ -131,6 +136,11 @@
   flex-wrap: wrap;
   gap: 10px;
   margin-left: clamp(12vh, 5vw, 5vh);
+}
+@media (min-width: 1900px) and (max-width: 3500px) {
+  .contact__details .contact__container .contact__row {
+    margin-left: clamp(7vh, 5vw, 5vh);
+  }
 }
 @media (max-width: 1024px) {
   .contact__details .contact__container .contact__row {
