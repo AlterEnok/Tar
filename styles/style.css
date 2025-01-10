@@ -31,9 +31,14 @@ html {
   position: relative;
   right: -150px;
 }
+@media (max-width: 767px) {
+  .uberuns img {
+    margin-left: 76px;
+  }
+}
 @media (max-width: 1024px) {
   .uberuns {
-    right: -80px;
+    right: -20px;
   }
 }
 @media (min-width: 1900px) and (max-width: 3500px) {
@@ -156,15 +161,13 @@ html {
 @media (max-width: 767px) {
   .about__content .about__photo {
     width: 337px;
-    margin-left: 5vh;
+    margin-left: 4vh;
     margin-bottom: 96px;
   }
 }
 .about__content .about__photo--img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .about .about__text {
   font-family: "Julius Sans One", sans-serif;
@@ -414,7 +417,7 @@ html {
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  padding-bottom: 115px;
+  padding-bottom: clamp(80px, 10vw, 115px);
 }
 .patrones__intro-content {
   background: rgba(0, 0, 0, 0.6);
@@ -426,36 +429,36 @@ html {
 .patrones__intro .patrones__title {
   font-family: "Koulen", sans-serif;
   font-weight: 400;
-  font-size: 44px;
+  font-size: clamp(24px, 5vw, 44px);
   line-height: 281%;
   letter-spacing: 0.1em;
   color: #fff;
   border: 4px solid #f27b21;
-  width: 453px;
-  height: 121px;
+  width: clamp(300px, 50vw, 453px);
+  height: clamp(80px, 15vw, 121px);
   text-transform: uppercase;
   margin-bottom: 10px;
   text-align: center;
 }
 @media (max-width: 767px) {
   .patrones__intro .patrones__title {
-    width: 365px;
+    width: clamp(250px, 40vw, 365px);
   }
 }
 .patrones__intro .patrones__link {
   font-family: "Koulen", sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: clamp(18px, 4vw, 32px);
   color: #fff;
   line-height: 97%;
   letter-spacing: 0.36em;
   padding-bottom: 5px;
-  margin-top: 35px;
+  margin-top: clamp(20px, 5vw, 35px);
   transition: color 0.3s, border-bottom 0.3s;
   border: none;
-  margin-left: 23vh;
+  margin-left: clamp(24vh, 5vw, 23vh);
   position: relative;
-  top: 15px;
+  top: clamp(5px, 3vw, 15px);
 }
 .patrones__intro .patrones__link:hover, .patrones__intro .patrones__link.active {
   color: #fb7507;
@@ -463,45 +466,53 @@ html {
 }
 @media (min-width: 1900px) and (max-width: 3500px) {
   .patrones__intro .patrones__link {
-    margin-left: 18vh;
+    margin-left: clamp(17vh, 6vw, 18vh);
+  }
+}
+@media (max-width: 1024px) {
+  .patrones__intro .patrones__link {
+    margin-left: clamp(14vh, 5vw, 23vh);
   }
 }
 @media (max-width: 767px) {
   .patrones__intro .patrones__link {
-    margin-left: 15vh;
+    margin-left: clamp(11vh, 4vw, 15vh);
   }
 }
 @media (max-width: 385px) {
   .patrones__intro .patrones__link {
-    margin-left: 20vh;
+    margin-left: clamp(14vh, 4vw, 20vh);
   }
 }
 
 .patrones__container {
   position: relative;
-  top: 13vh;
-  width: 444px;
-  height: 172px;
+  top: clamp(8vh, 5vw, 13vh);
+  width: clamp(300px, 50vw, 444px);
+  height: clamp(120px, 15vw, 172px);
 }
 .patrones__container .patrones__row {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 15px;
+  gap: clamp(10px, 2vw, 20px);
+  padding: clamp(10px, 2vw, 15px);
+  margin-left: clamp(-1vh, 1vw, -1vh);
 }
 @media (max-width: 767px) {
   .patrones__container .patrones__row {
-    display: flex;
     justify-content: flex-start;
-    gap: 20px;
-    padding: 15px;
-    margin-left: -1vh;
+    margin-left: clamp(-3vh, -22vw, -8vh);
+  }
+}
+@media (max-width: 385px) {
+  .patrones__container .patrones__row {
+    margin-left: clamp(-6vh, -22vw, -8vh);
   }
 }
 .patrones__container .patrones__logo {
-  max-width: 151px;
+  max-width: clamp(50px, 10vw, 151px);
   height: auto;
-  padding: 10px;
+  padding: clamp(5px, 2vw, 10px);
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -512,17 +523,22 @@ html {
 }
 @media (min-width: 1900px) and (max-width: 3500px) {
   .patrones__container .patrones__logo {
-    max-width: 200px;
+    max-width: clamp(150px, 8vw, 200px);
+  }
+}
+@media (max-width: 1367px) {
+  .patrones__container .patrones__logo {
+    max-width: clamp(50px, 46vw, 207px);
   }
 }
 @media (max-width: 914px) {
   .patrones__container .patrones__logo {
-    max-width: 80px;
+    max-width: clamp(80px, 45vw, 157px);
   }
 }
 @media (max-width: 767px) {
   .patrones__container .patrones__logo {
-    max-width: 71px;
+    max-width: clamp(76px, 6vw, 71px);
   }
 }
 
@@ -683,7 +699,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 410px;
+  height: clamp(300px, 50vh, 410px);
   background-size: cover;
   background-position: center;
   color: white;
@@ -696,30 +712,30 @@ html {
 .contact__intro .contact__content .contact__title {
   font-family: "Koulen", sans-serif;
   font-weight: 400;
-  font-size: 44px;
+  font-size: clamp(28px, 5vw, 44px);
   line-height: 281%;
   letter-spacing: 0.1em;
   color: #fff;
   border: 4px solid #f27b21;
-  width: 453px;
-  height: 121px;
+  width: clamp(280px, 50%, 453px);
+  height: clamp(90px, 20vh, 121px);
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 @media (max-width: 767px) {
   .contact__intro .contact__content .contact__title {
-    width: 370px;
+    width: clamp(300px, 90%, 370px);
   }
 }
 @media (max-width: 385px) {
   .contact__intro .contact__content .contact__title {
-    width: 352px;
+    width: clamp(280px, 90%, 352px);
   }
 }
 .contact__intro .contact__content .contact__breadcrumb {
   font-family: "Koulen", sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: clamp(20px, 4vw, 32px);
   color: #fff;
   line-height: 97%;
   letter-spacing: 0.36em;
@@ -741,9 +757,9 @@ html {
   border-bottom: 2px solid #fb7507;
 }
 .contact__details {
-  padding: 50px 20px;
+  padding: clamp(30px, 5vw, 50px) clamp(10px, 4vw, 20px);
   background-color: #f9f9f9;
-  padding-bottom: 170px;
+  padding-bottom: clamp(100px, 15vw, 170px);
 }
 .contact__details .contact__container {
   max-width: 1200px;
@@ -752,34 +768,29 @@ html {
 .contact__details .contact__container .contact__details--title {
   font-family: "Koulen", sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: clamp(20px, 4vw, 32px);
   line-height: 181%;
-  letter-spacing: 0.13em;
+  letter-spacing: clamp(0.1em, 1vw, 0.13em);
   color: #000;
   position: relative;
-  right: -45vh;
-  padding-bottom: 80px;
-}
-@media (min-width: 1900px) and (max-width: 3500px) {
-  .contact__details .contact__container .contact__details--title {
-    right: -34vh;
-  }
+  right: clamp(-10vh, 30vw, -45vh);
+  padding-bottom: clamp(40px, 8vw, 80px);
 }
 @media (max-width: 1024px) {
   .contact__details .contact__container .contact__details--title {
-    right: -7vh;
+    right: clamp(-5vh, 10vw, -7vh);
   }
 }
 @media (max-width: 767px) {
   .contact__details .contact__container .contact__details--title {
-    right: -5vh;
-    letter-spacing: 0.4em;
+    right: clamp(-3vh, 7vw, -5vh);
+    letter-spacing: clamp(0.2em, 3vw, 0.4em);
   }
 }
 @media (max-width: 385px) {
   .contact__details .contact__container .contact__details--title {
-    font-size: 40px;
-    right: -8vh;
+    font-size: clamp(28px, 7vw, 40px);
+    right: clamp(-4vh, 9vw, -8vh);
   }
 }
 .contact__details .contact__container .contact__row {
@@ -787,7 +798,12 @@ html {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-  margin-left: 5vh;
+  margin-left: clamp(0vh, 5vw, 5vh);
+}
+@media (max-width: 1024px) {
+  .contact__details .contact__container .contact__row {
+    margin-left: 0;
+  }
 }
 @media (max-width: 767px) {
   .contact__details .contact__container .contact__row {
@@ -800,40 +816,33 @@ html {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: clamp(15px, 5vw, 20px);
   position: relative;
-  /* Чтобы псевдоэлемент ::after позиционировался относительно этого блока */
 }
 .contact__details .contact__container .contact__row .contact__item .contact__info--header {
   position: relative;
-  /* Обязателен для правильного позиционирования ::after */
 }
 .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: -106px;
-  right: -26vh;
+  top: clamp(-90px, -25vh, -106px);
+  right: clamp(-20vh, 20vw, -26vh);
   width: 2px;
-  height: 34vh;
+  height: clamp(25vh, 40vw, 34vh);
   transform: translateY(-10%);
   background-color: rgba(242, 123, 33, 0.44);
 }
-@media (min-width: 1900px) and (max-width: 3500px) {
-  .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
-    right: -18vh;
-  }
-}
 @media (max-width: 1026px) {
   .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
-    top: -173px;
-    right: -9vh;
+    top: clamp(-140px, -20vh, -173px);
+    right: clamp(-8vh, 15vw, -9vh);
   }
 }
 @media (max-width: 767px) {
   .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
-    right: 6vh;
+    right: clamp(4vh, 10vw, 6vh);
     transform: rotate(90deg);
-    top: -5vh;
+    top: clamp(-4vh, 8vw, -5vh);
   }
 }
 .contact__details .contact__container .contact__row .contact__item:last-child .contact__info--header::after {
@@ -845,29 +854,29 @@ html {
   }
 }
 .contact__details .contact__container .contact__row .contact__item .contact__icon {
-  width: 132px;
-  height: 120px;
+  width: clamp(100px, 10vw, 132px);
+  height: clamp(90px, 10vw, 120px);
   margin-bottom: 10px;
 }
 .contact__details .contact__container .contact__row .contact__item .contact__info {
   font-family: "Koulen", sans-serif;
   max-width: 248px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   line-height: 181%;
-  letter-spacing: 0.36em;
+  letter-spacing: clamp(0.2em, 3vw, 0.36em);
   color: #7f7f7f;
 }
 .contact__details .contact__container .contact__row .contact__item .contact__info--text {
   font-weight: 400;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   line-height: 181%;
-  letter-spacing: 0.36em;
+  letter-spacing: clamp(0.2em, 3vw, 0.36em);
   color: #000;
 }
 @media (max-width: 1024px) {
   .contact__details .contact__container .contact__row .contact__item .contact__info--text {
-    letter-spacing: 0.1em;
+    letter-spacing: clamp(0.1em, 2vw, 0.1em);
   }
 }
 .contact__map {
@@ -876,7 +885,7 @@ html {
 .contact__map iframe {
   border: 0;
   width: 100%;
-  height: 450px;
+  height: clamp(300px, 40vw, 450px);
 }
 
 .footer {
@@ -1160,7 +1169,12 @@ body {
 }
 @media (max-width: 1024px) {
   .header__logo img {
-    margin-left: -5px;
+    margin-left: 85px;
+  }
+}
+@media (max-width: 767px) {
+  .header__logo img {
+    margin-left: 0;
   }
 }
 @media (min-width: 1900px) and (max-width: 3500px) {
@@ -1382,6 +1396,11 @@ body {
 @media (min-width: 1900px) and (max-width: 3500px) {
   .hero__title {
     top: -35vh;
+  }
+}
+@media (max-width: 1024px) {
+  .hero__title {
+    font-size: 107px;
   }
 }
 @media (max-width: 767px) {

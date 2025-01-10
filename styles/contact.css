@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 410px;
+  height: clamp(300px, 50vh, 410px);
   background-size: cover;
   background-position: center;
   color: white;
@@ -19,33 +19,40 @@
   margin-top: 12vh;
   margin-bottom: -5vh;
 }
+@media (max-width: 1336px) {
+  .contact__intro .contact__content {
+    margin-top: 4vh;
+  }
+}
 .contact__intro .contact__content .contact__title {
   font-family: "Koulen", sans-serif;
   font-weight: 400;
-  font-size: 44px;
-  line-height: 281%;
+  font-size: clamp(28px, 5vw, 47px);
+  line-height: 245%;
   letter-spacing: 0.1em;
   color: #fff;
   border: 4px solid #f27b21;
-  width: 453px;
-  height: 121px;
+  width: clamp(320px, 50%, 453px);
+  height: clamp(68px, 14vh, 121px);
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 @media (max-width: 767px) {
   .contact__intro .contact__content .contact__title {
-    width: 370px;
+    width: clamp(190px, 90%, 352px);
+    height: clamp(68px, 10vh, 121px);
   }
 }
 @media (max-width: 385px) {
   .contact__intro .contact__content .contact__title {
-    width: 352px;
+    width: clamp(190px, 90%, 352px);
+    height: clamp(68px, 10vh, 121px);
   }
 }
 .contact__intro .contact__content .contact__breadcrumb {
   font-family: "Koulen", sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: clamp(20px, 4vw, 32px);
   color: #fff;
   line-height: 97%;
   letter-spacing: 0.36em;
@@ -53,7 +60,7 @@
   margin-top: 35px;
   transition: color 0.3s, border-bottom 0.3s;
   border: none;
-  margin-left: 1vh;
+  margin-left: 5vh;
   position: relative;
   top: 15px;
 }
@@ -62,14 +69,24 @@
     margin-left: -1vh;
   }
 }
+@media (max-width: 767px) {
+  .contact__intro .contact__content .contact__breadcrumb {
+    margin-left: 2vh;
+  }
+}
+@media (max-width: 385px) {
+  .contact__intro .contact__content .contact__breadcrumb {
+    margin-left: 2vh;
+  }
+}
 .contact__intro .contact__content .contact__breadcrumb:hover {
   color: #fb7507;
   border-bottom: 2px solid #fb7507;
 }
 .contact__details {
-  padding: 50px 20px;
+  padding: clamp(30px, 5vw, 50px) clamp(10px, 4vw, 20px);
   background-color: #f9f9f9;
-  padding-bottom: 170px;
+  padding-bottom: clamp(100px, 15vw, 170px);
 }
 .contact__details .contact__container {
   max-width: 1200px;
@@ -78,34 +95,34 @@
 .contact__details .contact__container .contact__details--title {
   font-family: "Koulen", sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: clamp(20px, 4vw, 32px);
   line-height: 181%;
-  letter-spacing: 0.13em;
+  letter-spacing: clamp(0.1em, 1vw, 0.13em);
   color: #000;
   position: relative;
-  right: -45vh;
-  padding-bottom: 80px;
+  right: clamp(-44vh, 30vw, -45vh);
+  padding-bottom: clamp(40px, 8vw, 80px);
 }
-@media (min-width: 1900px) and (max-width: 3500px) {
+@media (max-width: 1336px) {
   .contact__details .contact__container .contact__details--title {
-    right: -34vh;
+    right: clamp(-15vh, 10vw, -16vh);
   }
 }
 @media (max-width: 1024px) {
   .contact__details .contact__container .contact__details--title {
-    right: -7vh;
+    right: clamp(-9vh, 10vw, -9vh);
   }
 }
 @media (max-width: 767px) {
   .contact__details .contact__container .contact__details--title {
-    right: -5vh;
-    letter-spacing: 0.4em;
+    right: clamp(-7vh, 8vw, -6vh);
+    letter-spacing: clamp(0.2em, 3vw, 0.4em);
   }
 }
 @media (max-width: 385px) {
   .contact__details .contact__container .contact__details--title {
-    font-size: 40px;
-    right: -8vh;
+    font-size: clamp(28px, 7vw, 40px);
+    right: clamp(-8vh, 9vw, -8vh);
   }
 }
 .contact__details .contact__container .contact__row {
@@ -113,7 +130,12 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-  margin-left: 5vh;
+  margin-left: clamp(12vh, 5vw, 5vh);
+}
+@media (max-width: 1024px) {
+  .contact__details .contact__container .contact__row {
+    margin-left: 0;
+  }
 }
 @media (max-width: 767px) {
   .contact__details .contact__container .contact__row {
@@ -126,40 +148,38 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: clamp(15px, 5vw, 20px);
   position: relative;
-  /* Чтобы псевдоэлемент ::after позиционировался относительно этого блока */
 }
 .contact__details .contact__container .contact__row .contact__item .contact__info--header {
   position: relative;
-  /* Обязателен для правильного позиционирования ::after */
 }
 .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: -106px;
-  right: -26vh;
+  top: clamp(-90px, -25vh, -106px);
+  right: clamp(-20vh, 20vw, -26vh);
   width: 2px;
-  height: 34vh;
+  height: clamp(25vh, 40vw, 34vh);
   transform: translateY(-10%);
   background-color: rgba(242, 123, 33, 0.44);
 }
-@media (min-width: 1900px) and (max-width: 3500px) {
-  .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
-    right: -18vh;
-  }
-}
 @media (max-width: 1026px) {
   .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
-    top: -173px;
-    right: -9vh;
+    top: clamp(-140px, -20vh, -173px);
+    right: clamp(-8vh, 15vw, -9vh);
   }
 }
 @media (max-width: 767px) {
   .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
-    right: 6vh;
+    right: clamp(4vh, 10vw, 6vh);
     transform: rotate(90deg);
-    top: -5vh;
+    top: clamp(-2vh, 8vw, -5vh);
+  }
+}
+@media (max-width: 385px) {
+  .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
+    top: clamp(0vh, 8vw, -5vh);
   }
 }
 .contact__details .contact__container .contact__row .contact__item:last-child .contact__info--header::after {
@@ -171,29 +191,29 @@
   }
 }
 .contact__details .contact__container .contact__row .contact__item .contact__icon {
-  width: 132px;
-  height: 120px;
+  width: clamp(100px, 10vw, 132px);
+  height: clamp(90px, 10vw, 120px);
   margin-bottom: 10px;
 }
 .contact__details .contact__container .contact__row .contact__item .contact__info {
   font-family: "Koulen", sans-serif;
   max-width: 248px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   line-height: 181%;
-  letter-spacing: 0.36em;
+  letter-spacing: clamp(0.2em, 3vw, 0.36em);
   color: #7f7f7f;
 }
 .contact__details .contact__container .contact__row .contact__item .contact__info--text {
   font-weight: 400;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   line-height: 181%;
-  letter-spacing: 0.36em;
+  letter-spacing: clamp(0.2em, 3vw, 0.36em);
   color: #000;
 }
 @media (max-width: 1024px) {
   .contact__details .contact__container .contact__row .contact__item .contact__info--text {
-    letter-spacing: 0.1em;
+    letter-spacing: clamp(0.1em, 2vw, 0.1em);
   }
 }
 .contact__map {
@@ -202,7 +222,7 @@
 .contact__map iframe {
   border: 0;
   width: 100%;
-  height: 450px;
+  height: clamp(300px, 40vw, 450px);
 }
 
 .footer {
