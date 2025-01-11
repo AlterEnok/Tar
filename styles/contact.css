@@ -37,10 +37,15 @@
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+@media (max-width: 1024px) {
+  .contact__intro .contact__content .contact__title {
+    height: clamp(68px, 14vh, 92px);
+  }
+}
 @media (max-width: 767px) {
   .contact__intro .contact__content .contact__title {
     width: clamp(190px, 90%, 352px);
-    height: clamp(68px, 10vh, 121px);
+    height: clamp(68px, 8vh, 121px);
   }
 }
 @media (max-width: 385px) {
@@ -105,7 +110,7 @@
 }
 @media (min-width: 1900px) and (max-width: 3500px) {
   .contact__details .contact__container .contact__details--title {
-    right: clamp(-37vh, 30vw, -45vh);
+    right: clamp(-34vh, 30vw, -45vh);
   }
 }
 @media (max-width: 1336px) {
@@ -173,6 +178,11 @@
   height: clamp(25vh, 40vw, 34vh);
   transform: translateY(-10%);
   background-color: rgba(242, 123, 33, 0.44);
+}
+@media (min-width: 1900px) and (max-width: 3500px) {
+  .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
+    right: clamp(-15vh, 15vw, -19vh);
+  }
 }
 @media (max-width: 1026px) {
   .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {

@@ -303,7 +303,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 30px;
+        width: 29px;
         height: 20px;
         cursor: pointer;
         z-index: 100000;
@@ -323,7 +323,7 @@ body {
 
         &._active span:nth-child(1) {
             transform: rotate(45deg);
-            top: 50%;
+            top: 51%;
             background-color: #fb7507;
 
         }
@@ -606,12 +606,12 @@ body {
 
 .partners {
     background-color: #121212;
-    padding: 20px 0;
-    border-radius: 61px;
-    margin: 10px;
-    margin-left: 20px;
+    padding: clamp(10px, 3vw, 20px) 0;
+    border-radius: clamp(0px, 5vw, 61px);
+    margin: clamp(5px, 2vw, 10px);
+    margin-left: clamp(10px, 2vw, 20px);
 
-    @media(max-width: 767px) {
+    @media (max-width: 767px) {
         margin: 0;
         border-radius: 0;
     }
@@ -622,29 +622,25 @@ body {
         .swiper-wrapper {
             display: flex;
             transition: transform 0.3s ease-in-out;
-
         }
 
         .swiper-slide {
             flex-shrink: 0;
-            padding: 10px;
-            border-radius: 10px;
+            padding: clamp(5px, 2vw, 10px);
+            border-radius: clamp(5px, 2vw, 10px);
             transition: transform 0.3s ease-in-out;
-
 
             &:hover {
                 transform: scale(1.05);
-
             }
 
             img {
-                max-height: 80px;
+                max-height: clamp(50px, 8vw, 80px);
                 max-width: 100%;
                 display: block;
                 margin: 0 auto;
-                filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+                filter: drop-shadow(0 clamp(2px, 1vw, 6px) clamp(3px, 2vw, 6px) rgba(0, 0, 0, 0.2));
                 transition: transform 0.3s ease-in-out;
-
             }
         }
     }
@@ -652,12 +648,12 @@ body {
     &__title {
         font-family: "Koulen", sans-serif;
         font-weight: 400;
-        font-size: 32px;
+        font-size: clamp(20px, 4vw, 32px);
         line-height: 181%;
-        letter-spacing: 0.36em;
+        letter-spacing: clamp(0.2em, 0.4vw, 0.36em);
 
-        @media(max-width: 767px) {
-            font-size: 28px;
+        @media (max-width: 767px) {
+            font-size: clamp(20px, 4vw, 28px);
         }
     }
 }
@@ -933,7 +929,7 @@ body {
         height: clamp(45px, 7vw, 55px);
         font-family: "K2D", sans-serif;
         font-size: clamp(12px, 3vw, 16px);
-        line-height: normal; // Исправлено для центрирования текста
+        line-height: normal;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         color: #000;
@@ -942,7 +938,7 @@ body {
         z-index: 5;
         overflow: hidden;
 
-        display: flex; // Добавлено для центрирования текста
+        display: flex;
         justify-content: center;
         align-items: center;
 
@@ -1153,7 +1149,7 @@ body {
                             content: "";
                             position: absolute;
                             bottom: -5px;
-                            /* Расстояние от текста до полоски */
+
                             left: 0;
                             width: 100%;
                             height: 2px;
@@ -1176,7 +1172,7 @@ body {
             .footer__address {
                 font-family: "Koulen", sans-serif;
                 width: 100%;
-                /* Адаптивная ширина */
+
                 font-weight: 400;
                 font-size: 15px;
                 line-height: 181%;
@@ -1196,7 +1192,7 @@ body {
 
                     &:hover {
                         color: #fb7507;
-                        /* Меняем цвет текста на оранжевый при наведении */
+
                     }
                 }
             }

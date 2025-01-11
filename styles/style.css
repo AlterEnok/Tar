@@ -727,10 +727,15 @@ html {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+@media (max-width: 1024px) {
+  .contact__intro .contact__content .contact__title {
+    height: clamp(68px, 14vh, 92px);
+  }
+}
 @media (max-width: 767px) {
   .contact__intro .contact__content .contact__title {
     width: clamp(190px, 90%, 352px);
-    height: clamp(68px, 10vh, 121px);
+    height: clamp(68px, 8vh, 121px);
   }
 }
 @media (max-width: 385px) {
@@ -756,7 +761,7 @@ html {
 }
 @media (min-width: 1900px) and (max-width: 3500px) {
   .contact__intro .contact__content .contact__breadcrumb {
-    margin-left: -1vh;
+    margin-left: 3vh;
   }
 }
 @media (max-width: 767px) {
@@ -793,9 +798,14 @@ html {
   right: clamp(-44vh, 30vw, -45vh);
   padding-bottom: clamp(40px, 8vw, 80px);
 }
+@media (min-width: 1900px) and (max-width: 3500px) {
+  .contact__details .contact__container .contact__details--title {
+    right: clamp(-34vh, 30vw, -45vh);
+  }
+}
 @media (max-width: 1336px) {
   .contact__details .contact__container .contact__details--title {
-    right: clamp(-21vh, 9vw, -14vh);
+    right: clamp(-11vh, 10vw, -16vh);
   }
 }
 @media (max-width: 1024px) {
@@ -821,6 +831,11 @@ html {
   flex-wrap: wrap;
   gap: 10px;
   margin-left: clamp(12vh, 5vw, 5vh);
+}
+@media (min-width: 1900px) and (max-width: 3500px) {
+  .contact__details .contact__container .contact__row {
+    margin-left: clamp(7vh, 5vw, 5vh);
+  }
 }
 @media (max-width: 1024px) {
   .contact__details .contact__container .contact__row {
@@ -853,6 +868,11 @@ html {
   height: clamp(25vh, 40vw, 34vh);
   transform: translateY(-10%);
   background-color: rgba(242, 123, 33, 0.44);
+}
+@media (min-width: 1900px) and (max-width: 3500px) {
+  .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
+    right: clamp(-15vh, 15vw, -19vh);
+  }
 }
 @media (max-width: 1026px) {
   .contact__details .contact__container .contact__row .contact__item .contact__info--header:not(:last-child)::after {
@@ -1329,7 +1349,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
+    width: 29px;
     height: 20px;
     cursor: pointer;
     z-index: 100000;
@@ -1347,7 +1367,7 @@ body {
   }
   .menu-icon._active span:nth-child(1) {
     transform: rotate(45deg);
-    top: 50%;
+    top: 51%;
     background-color: #fb7507;
   }
   .menu-icon._active span:nth-child(2) {
@@ -1596,10 +1616,10 @@ body {
 
 .partners {
   background-color: #121212;
-  padding: 20px 0;
-  border-radius: 61px;
-  margin: 10px;
-  margin-left: 20px;
+  padding: clamp(10px, 3vw, 20px) 0;
+  border-radius: clamp(0px, 5vw, 61px);
+  margin: clamp(5px, 2vw, 10px);
+  margin-left: clamp(10px, 2vw, 20px);
 }
 @media (max-width: 767px) {
   .partners {
@@ -1616,31 +1636,31 @@ body {
 }
 .partners__slider .swiper-slide {
   flex-shrink: 0;
-  padding: 10px;
-  border-radius: 10px;
+  padding: clamp(5px, 2vw, 10px);
+  border-radius: clamp(5px, 2vw, 10px);
   transition: transform 0.3s ease-in-out;
 }
 .partners__slider .swiper-slide:hover {
   transform: scale(1.05);
 }
 .partners__slider .swiper-slide img {
-  max-height: 80px;
+  max-height: clamp(50px, 8vw, 80px);
   max-width: 100%;
   display: block;
   margin: 0 auto;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 clamp(2px, 1vw, 6px) clamp(3px, 2vw, 6px) rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease-in-out;
 }
 .partners__title {
   font-family: "Koulen", sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: clamp(20px, 4vw, 32px);
   line-height: 181%;
-  letter-spacing: 0.36em;
+  letter-spacing: clamp(0.2em, 0.4vw, 0.36em);
 }
 @media (max-width: 767px) {
   .partners__title {
-    font-size: 28px;
+    font-size: clamp(20px, 4vw, 28px);
   }
 }
 
@@ -2105,7 +2125,6 @@ body {
   content: "";
   position: absolute;
   bottom: -5px;
-  /* Расстояние от текста до полоски */
   left: 0;
   width: 100%;
   height: 2px;
@@ -2126,7 +2145,6 @@ body {
 .footer__section--links .footer__address, .footer__section--contact .footer__address {
   font-family: "Koulen", sans-serif;
   width: 100%;
-  /* Адаптивная ширина */
   font-weight: 400;
   font-size: 15px;
   line-height: 181%;
@@ -2148,7 +2166,6 @@ body {
 }
 .footer__section--links .footer__address .footer__contact:hover, .footer__section--contact .footer__address .footer__contact:hover {
   color: #fb7507;
-  /* Меняем цвет текста на оранжевый при наведении */
 }
 .footer__bottom {
   text-align: center;
