@@ -177,8 +177,13 @@ body {
 
     &__list {
         display: flex;
-        gap: clamp(20px, 4vw, 45px);
+        gap: clamp(20px, 6vw, 70px);
         list-style: none;
+
+        @media (min-width: 1900px) and (max-width: 3500px) {
+            gap: clamp(35px, 7vw, 40px);
+            margin-right: -5vh;
+        }
 
         @media(max-width: 1900px) {
             margin-left: 29vh;
@@ -556,7 +561,7 @@ body {
 
     line-height: 118%;
     letter-spacing: 0.21em;
-    top: -27vh;
+    top: -24vh;
 
     @media (min-width: 1900px) and (max-width: 3500px) {
         top: -24vh;
@@ -564,7 +569,7 @@ body {
     }
 
     @media (max-width: 767px) {
-        font-size: 22px;
+        font-size: 19px;
         top: -24vh;
 
     }
