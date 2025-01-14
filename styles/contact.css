@@ -27,31 +27,45 @@
 .contact__intro .contact__content .contact__title {
   font-family: "Koulen", sans-serif;
   font-weight: 400;
-  font-size: clamp(28px, 5vw, 47px);
-  line-height: 245%;
+  font-size: clamp(24px, 5vw, 44px);
+  line-height: 281%;
   letter-spacing: 0.1em;
   color: #fff;
   border: 4px solid #f27b21;
-  width: clamp(320px, 50%, 453px);
-  height: clamp(68px, 14vh, 121px);
+  width: clamp(300px, 50vw, 453px);
+  height: clamp(80px, 15vw, 121px);
   text-transform: uppercase;
   margin-bottom: 10px;
+  text-align: center;
+}
+@media (min-width: 1900px) and (max-width: 3500px) {
+  .contact__intro .contact__content .contact__title {
+    right: clamp(-34vh, 30vw, -45vh);
+    width: clamp(408px, 61%, 453px);
+    height: clamp(85px, 23vh, 115px);
+    margin-left: -12vh;
+  }
+}
+@media (max-width: 1336px) {
+  .contact__intro .contact__content .contact__title {
+    right: clamp(-11vh, 10vw, -16vh);
+  }
 }
 @media (max-width: 1024px) {
   .contact__intro .contact__content .contact__title {
-    height: clamp(68px, 14vh, 92px);
+    right: clamp(-9vh, 10vw, -9vh);
   }
 }
 @media (max-width: 767px) {
   .contact__intro .contact__content .contact__title {
-    width: clamp(190px, 90%, 352px);
-    height: clamp(68px, 8vh, 121px);
+    right: clamp(-7vh, 8vw, -6vh);
+    letter-spacing: clamp(0.2em, 3vw, 0.4em);
   }
 }
 @media (max-width: 385px) {
   .contact__intro .contact__content .contact__title {
-    width: clamp(190px, 90%, 352px);
-    height: clamp(68px, 10vh, 121px);
+    font-size: clamp(28px, 7vw, 40px);
+    right: clamp(-8vh, 9vw, -8vh);
   }
 }
 .contact__intro .contact__content .contact__breadcrumb {
@@ -65,23 +79,29 @@
   margin-top: 35px;
   transition: color 0.3s, border-bottom 0.3s;
   border: none;
-  margin-left: 5vh;
+  margin-left: 1vh;
   position: relative;
   top: 15px;
 }
 @media (min-width: 1900px) and (max-width: 3500px) {
   .contact__intro .contact__content .contact__breadcrumb {
     margin-left: 3vh;
+    top: 8px;
+  }
+}
+@media (max-width: 1367px) {
+  .contact__intro .contact__content .contact__breadcrumb {
+    left: -3vh;
   }
 }
 @media (max-width: 767px) {
   .contact__intro .contact__content .contact__breadcrumb {
-    margin-left: 2vh;
+    margin-left: 5vh;
   }
 }
 @media (max-width: 385px) {
   .contact__intro .contact__content .contact__breadcrumb {
-    margin-left: 2vh;
+    margin-left: 7vh;
   }
 }
 .contact__intro .contact__content .contact__breadcrumb:hover {
@@ -96,44 +116,6 @@
 .contact__details .contact__container {
   max-width: 1200px;
   margin: 0 auto;
-}
-.contact__details .contact__container .contact__details--title {
-  font-family: "Koulen", sans-serif;
-  font-weight: 400;
-  font-size: clamp(20px, 4vw, 32px);
-  line-height: 181%;
-  letter-spacing: clamp(0.1em, 1vw, 0.13em);
-  color: #000;
-  position: relative;
-  right: clamp(-44vh, 30vw, -45vh);
-  padding-bottom: clamp(40px, 8vw, 80px);
-}
-@media (min-width: 1900px) and (max-width: 3500px) {
-  .contact__details .contact__container .contact__details--title {
-    right: clamp(-34vh, 30vw, -45vh);
-  }
-}
-@media (max-width: 1336px) {
-  .contact__details .contact__container .contact__details--title {
-    right: clamp(-11vh, 10vw, -16vh);
-  }
-}
-@media (max-width: 1024px) {
-  .contact__details .contact__container .contact__details--title {
-    right: clamp(-9vh, 10vw, -9vh);
-  }
-}
-@media (max-width: 767px) {
-  .contact__details .contact__container .contact__details--title {
-    right: clamp(-7vh, 8vw, -6vh);
-    letter-spacing: clamp(0.2em, 3vw, 0.4em);
-  }
-}
-@media (max-width: 385px) {
-  .contact__details .contact__container .contact__details--title {
-    font-size: clamp(28px, 7vw, 40px);
-    right: clamp(-8vh, 9vw, -8vh);
-  }
 }
 .contact__details .contact__container .contact__row {
   display: flex;
@@ -243,6 +225,20 @@
   border: 0;
   width: 100%;
   height: clamp(300px, 40vw, 450px);
+}
+
+.header__link--contact {
+  position: relative;
+  top: 7px;
+}
+@media (max-width: 1367px) {
+  .header__link--contact {
+    top: 12px;
+  }
+}
+
+.header__logo--contact {
+  margin-left: 4vh;
 }
 
 .footer {

@@ -135,6 +135,29 @@
     }
 }
 
+.header__link--partners {
+    position: relative;
+    top: 7px;
+
+    @media(max-width:1367px) {
+        top: 11px;
+    }
+}
+
+.header__logo--partner {
+    margin-left: 10vh;
+
+
+    @media (min-width: 1900px) and (max-width: 3500px) {
+        margin-left: 3vh;
+    }
+
+    @media(max-width:1367px) {
+        margin-left: 1vh;
+    }
+
+}
+
 .footer {
 
     margin-top: auto;
