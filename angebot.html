@@ -3,17 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>TAR | Messdienst - Über uns</title>
-    <meta name="description"
-        content="Erfahren Sie mehr über TAR Messdienst, unsere Dienstleistungen und innovative Herangehensweise in der Gebäudedigitalisierung.">
-    <meta name="keywords"
-        content="TAR Messdienst, Gebäudedigitalisierung, Kai Hempelmann, nachhaltige Lösungen, Wärmemessung">
-    <meta name="author" content="NovaTeam">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAR | Messdienst - Angebot</title>
     <link rel="icon" href="img/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/uber-uns.css">
+    <link rel="stylesheet" href="styles/partners.css">
+    <link rel="stylesheet" href="styles/contact.css">
     <link rel="stylesheet" href="styles/angebot.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Julius+Sans+One&family=K2D&family=Koulen&family=Konkhmer+Sleokchher&family=Kaisei+HarunoUmi&family=Kite+One&display=swap"
         rel="stylesheet">
@@ -24,17 +22,11 @@
 </head>
 
 <body>
-    <div class="preloader">
-        <div class="preloader__ball"></div>
-        <div class="preloader__ball"></div>
-        <div class="preloader__ball"></div>
-    </div>
-
     <div class="page">
         <header class="header">
             <div class="header__container">
-                <div class="header__logo uberuns">
-                    <a href="index.html"><img src="img/logo.svg" alt="Logo" /></a>
+                <div class="header__logo header__logo--partner">
+                    <a href="index.html"><img src="img/logo.svg" class="header__logo--partner" alt="Logo" /></a>
                 </div>
                 <nav class="header__nav">
                     <ul class="header__list">
@@ -55,7 +47,8 @@
 
                         <li><a href="index.html" class="header__link active  menu__header__link">Home</a></li>
                         <li><a href="uber-uns.html" class="header__link  menu__header__link">Über Uns</a></li>
-                        <li><a href="#angebot" class="header__link menu__header__link">Angebot</a></li>
+                        <li><a href="angebot.html" class="header__link menu__header__link">Angebot</a></li>
+                        <li><a href="#produkte" class="header__link menu__header__link">Produkte</a></li>
                         <li><a href="partners.html" class="header__link menu__header__link">Partner</a></li>
                         <li><a href="contact.html" class="header__link menu__header__link">Kontakt</a></li>
 
@@ -65,51 +58,57 @@
             </div>
         </header>
 
-        <main class="about">
-            <section class="about__intro">
-                <div class="about__intro-overlay">
-                    <h1 class="about__title">ÜBER UNS</h1>
-                    <a href="index.html" class="uber__link">Home</a>
+        <section class="angebot">
+            <div class="angebot__container">
+                <div class="angebot__content">
+                    <h1 class="angebot__title">Angebot</h1>
+                    <a href="index.html" class="angebot__breadcrumb">Home</a>
                 </div>
-            </section>
-
-            <section class="about__content">
-                <div class="about__container">
-                    <div class="about__photo">
-                        <img src="img/kai.jpg" alt="Kai Hempelman" class="about__photo--img" />
+                <div class="angebot__items">
+                    <div class="angebot__item">
+                        <div class="angebot__image-wrapper">
+                            <div class="angebot__image angebot__image--front"
+                                style="background-image: url('img/advantages-1.png');"></div>
+                            <div class="angebot__image angebot__image--back"
+                                style="background-image: url('img/advantages-1.png');"></div>
+                        </div>
+                        <div class="angebot__info">
+                            <h3 class="angebot__product-title">Produkt 1</h3>
+                            <p class="angebot__description">Kurze Beschreibung des Produkts 1.</p>
+                            <a href="mailto:example@domain.com" class="angebot__button">Mehr Erfahren</a>
+                        </div>
                     </div>
-                    <div class="about__text">
-                        <p><span>Mein Name ist Kai Hempelmann, und ich bin seit 1997 in der Branche der
-                                Gebäudedigitalisierung tätig.</span>
-                        </p>
-                        <p>Mit fast 30 Jahren Erfahrung habe ich umfassende Kenntnisse in verschiedenen Bereichen
-                            erworben. Ich habe für und
-                            mit Messdienstunternehmen, Stadtwerken und Geräteherstellern gearbeitet und große
-                            Wohnungswirtschafts- sowie
-                            Energieversorger in verschiedenen Bundesländern beraten.</p>
-                        <p>Mein Fokus liegt auf Lösungen und Hardware, die entscheidend zur Digitalisierung beitragen.
-                            Diese Technologien
-                            spielen eine zentrale Rolle bei der Dekarbonisierung, Ressourcenschonung,
-                            Effizienzsteigerung und Förderung der
-                            Wohngesundheit in Mehrfamilien-Bestandsgebäuden.</p>
-                        <p>Was mich auszeichnet, ist meine Affinität zur Digitalisierung, kombiniert mit Kreativität und
-                            langjähriger
-                            Erfahrung. Diese Kombination ermöglicht es mir, geringinvestive, nachhaltige und
-                            zukunftssichere Lösungen für
-                            die Gebäudedigitalisierung zu entwickeln.</p>
-                        <p>Als unabhängiger Berater bin ich keinem Hersteller verpflichtet, sondern setze mich
-                            ausschließlich für die
-                            Interessen meiner Kunden ein. Mein Ziel ist es, die bestmöglichen Lösungen zu finden und
-                            erfolgreich umzusetzen.
-                        </p>
-                        <p>Ich freue mich darauf, Sie kennenzulernen und gemeinsam innovative Wege in der
-                            Gebäudedigitalisierung zu
-                            beschreiten!</p>
+
+                    <div class="angebot__item">
+                        <div class="angebot__image-wrapper">
+                            <div class="angebot__image angebot__image--front"
+                                style="background-image: url('img/advantages-2.png');"></div>
+                            <div class="angebot__image angebot__image--back"
+                                style="background-image: url('img/advantages-2.png');"></div>
+                        </div>
+                        <div class="angebot__info">
+                            <h3 class="angebot__product-title">Produkt 2</h3>
+                            <p class="angebot__description">Kurze Beschreibung des Produkts 2.</p>
+                            <a href="mailto:example@domain.com" class="angebot__button">Mehr Erfahren</a>
+                        </div>
+                    </div>
+
+                    <div class="angebot__item">
+                        <div class="angebot__image-wrapper">
+                            <div class="angebot__image angebot__image--front"
+                                style="background-image: url('img/advantages-3.png');"></div>
+                            <div class="angebot__image angebot__image--back"
+                                style="background-image: url('img/advantages-3.png');"></div>
+                        </div>
+                        <div class="angebot__info">
+                            <h3 class="angebot__product-title">Produkt 3</h3>
+                            <p class="angebot__description">Kurze Beschreibung des Produkts 3.</p>
+                            <a href="mailto:example@domain.com" class="angebot__button">Mehr Erfahren</a>
+                        </div>
                     </div>
                 </div>
-            </section>
-        </main>
-
+            </div>
+        </section>
         <footer class="footer">
             <div class="footer__container">
                 <div class="footer__section footer__section--logo">
@@ -140,9 +139,7 @@
                 </p>
             </div>
         </footer>
-
     </div>
-
     <script defer src="js/script.js"></script>
 </body>
 

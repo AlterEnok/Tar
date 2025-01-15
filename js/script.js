@@ -279,3 +279,23 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(contactSection);
     }
 });
+
+/*ANGEBOT */
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray('.angebot__item').forEach((item, index) => {
+    gsap.to(item, {
+        opacity: 1,
+        x: 0,
+        rotateY: 0, // Плавный возврат карточек в исходное положение
+        duration: 0.8, // Ускорено
+        delay: index * 0.15, // Ускоренный каскадный эффект
+        ease: "power4.out", // Более резкий и эффектный easing
+        transformPerspective: 1000, // Глубина 3D-эффекта
+        scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+        }
+    });
+});
