@@ -299,3 +299,37 @@ gsap.utils.toArray('.angebot__item').forEach((item, index) => {
         }
     });
 });
+
+/*MODAL */
+const modal = document.getElementById("modal");
+const modalDescription = document.getElementById("modal-description");
+const closeModal = document.querySelector(".modal__close");
+const openModalButtons = document.querySelectorAll(".modal-open");
+
+if (modal && modalDescription) {
+    // Функция открытия модального окна
+    openModalButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            const description = button.dataset.description; // Получаем текст из data-description
+            if (description) {
+                modalDescription.textContent = description; // Устанавливаем текст
+            }
+            modal.classList.add("show");
+        });
+    });
+
+    // Закрытие модального окна
+    closeModal.addEventListener("click", () => {
+        modal.classList.remove("show");
+    });
+
+    // Закрытие при клике вне модального контента
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.remove("show");
+        }
+    });
+} else {
+    console.error("Modal or modal description element is missing!");
+}
