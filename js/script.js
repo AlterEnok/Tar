@@ -238,6 +238,85 @@ links.forEach(link => {
 });
 
 
+// UBER UNS
+document.addEventListener("DOMContentLoaded", () => {
+    const photo = document.querySelector(".about__photo");
+
+    if (!photo) {
+        console.warn("❌ Элемент .about__photo не найден!");
+        return;
+    }
+
+    gsap.to(photo, {
+        borderColor: "#ffd9b3", // Еще светлее для большего контраста
+        duration: 1,
+        ease: "power1.inOut",
+        yoyo: true,
+        repeat: -1
+    });
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.set(".about__text p", { opacity: 0, y: 20 });
+
+gsap.to(".about__text p", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    stagger: 0.3,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".about__text",
+        start: "top 80%",  // Запускается, когда верх блока доходит до 80% экрана
+        toggleActions: "play none none none"  // Анимация срабатывает один раз
+    }
+});
+
+
+// PARTNERS 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const logos = document.querySelectorAll(".patrones__logo");
+
+    // Устанавливаем начальные стили (чтобы логотипы были скрыты)
+    gsap.set(logos, { opacity: 0, y: 30 });
+
+    // Анимация появления при загрузке
+    gsap.to(logos, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.15, // Логотипы появляются один за другим
+        ease: "power3.out",
+    });
+
+    // Параллакс при скролле
+    gsap.utils.toArray(".patrones__logo").forEach((logo) => {
+        gsap.to(logo, {
+            y: -20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: logo,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+            },
+        });
+    });
+
+    // Добавляем эффект подпрыгивания при наведении
+    logos.forEach((logo) => {
+        logo.addEventListener("mouseenter", () => {
+            gsap.to(logo, { scale: 1.15, rotation: 2, duration: 0.3, ease: "elastic.out(1,0.3)" });
+        });
+
+        logo.addEventListener("mouseleave", () => {
+            gsap.to(logo, { scale: 1, rotation: 0, duration: 0.3, ease: "power2.out" });
+        });
+    });
+});
 
 
 

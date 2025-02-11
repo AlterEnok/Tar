@@ -1372,7 +1372,7 @@ html {
     width: 331px;
     height: 425px;
     background: #4e4c44;
-    margin-right: 9vh;
+    margin-right: 1vh;
   }
 }
 
@@ -1431,6 +1431,22 @@ img {
   max-width: 1402px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+/* styles of scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* slider scrollbar*/
+::-webkit-scrollbar-thumb {
+  background-color: #cd3d00;
+  border-radius: 5px;
+}
+
+/* background scrollbar */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
 html,
