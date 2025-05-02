@@ -1,470 +1,3 @@
-// html {
-//     overflow-x: hidden;
-// }
-
-// body {
-
-
-//     @media(max-width: 767px) {
-//         overflow-x: clip;
-//     }
-// }
-
-// .page {
-//     display: flex;
-//     flex-direction: column;
-//     min-height: 100vh; // Страница занимает всю высоту экрана
-// }
-
-// .page__content {
-//     flex: 1; // Основной контент растягивается, занимая всю доступную высоту
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     min-height: 100vh;
-
-//     &--title {
-//         color: gold;
-//     }
-
-// }
-
-// .uberuns {
-//     margin-left: -7vh;
-//     position: relative;
-//     right: -150px;
-
-//     img {
-//         @media(max-width: 767px) {
-//             margin-left: 76px;
-//         }
-//     }
-
-//     @media(max-width: 1024px) {
-//         right: -20px;
-//     }
-
-//     @media (min-width: 1900px) and (max-width: 3500px) {
-//         margin-left: -10vh;
-//     }
-
-//     @media(max-width: 767px) {
-//         margin-left: -100px;
-//     }
-// }
-
-// .about {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-
-
-
-
-//     &__intro {
-//         position: relative;
-//         width: 100%;
-//         height: 400px;
-//         /* Высота шапки */
-//         background-image: url("../img/slide-1.jpg");
-//         /* Заменить на путь к изображению */
-//         background-size: cover;
-//         background-position: center;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-
-//         &-overlay {
-//             background-color: rgba(0, 0, 0, 0.5);
-//             /* Полупрозрачный слой поверх фото */
-//             width: 100%;
-//             height: 100%;
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: center;
-//             align-items: center;
-//             text-align: center;
-//             padding: 20px;
-
-
-//         }
-
-
-//         & .about__title {
-//             font-family: "Koulen", sans-serif;
-//             font-weight: 400;
-//             font-size: 48px;
-//             line-height: 245%;
-//             letter-spacing: 0.36em;
-//             color: #fff;
-//             border: 4px solid #f27b21;
-//             width: 497px;
-//             height: 124px;
-//             text-transform: uppercase;
-//             margin-bottom: 10px;
-//             margin-top: 150px;
-
-//             @media(max-width: 767px) {
-//                 width: 362px;
-//             }
-//         }
-
-//         .uber__link {
-//             font-family: "Koulen", sans-serif;
-//             font-weight: 400;
-//             font-size: 32px;
-//             color: #fff;
-//             line-height: 97%;
-//             letter-spacing: 0.36em;
-//             padding-bottom: 5px;
-//             margin-top: 15px;
-//             transition: color 0.3s, border-bottom 0.3s;
-//             border: none;
-
-//             &:hover,
-//             &.active {
-//                 color: #fb7507;
-//                 border-bottom: 2px solid #fb7507;
-//             }
-//         }
-
-//     }
-
-//     &__content {
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         max-width: 800px;
-//         padding: 50px 20px;
-
-
-
-//         &__container {
-//             display: flex; // Располагает элементы в строку (фото + текст)
-//             flex-direction: row; // Элементы будут размещены горизонтально
-//             align-items: flex-start; // Выравнивание по верху контейнера
-//             justify-content: space-between; // Равномерное пространство между элементами (по желанию)
-//             flex-wrap: wrap; // Если экран становится узким, элементы переходят на новую строку
-//             gap: 20px; // Отступы между элементами
-//             width: 100%; // Убедитесь, что контейнер занимает всю ширину
-//             max-width: 1200px; // По желанию, ограничьте ширину
-//             margin: 0 auto; // Центрирование контейнера
-//             padding: 20px;
-//         }
-
-
-//         & .about__photo {
-//             position: relative;
-//             border: 9px solid #f27b21;
-//             border-radius: 180px;
-//             width: 461px;
-//             height: 493px;
-//             overflow: hidden;
-//             margin-bottom: 30px;
-//             margin: auto;
-//             margin-left: 17vh;
-//             margin-bottom: 30px;
-
-//             @media (min-width: 1900px) and (max-width: 3500px) {
-//                 margin-left: 13vh;
-//             }
-
-//             @media(max-width: 1024px) {
-//                 margin-left: 10vh;
-
-//             }
-
-
-
-//             @media(max-width:767px) {
-
-//                 width: 337px;
-//                 margin-left: 4vh;
-//                 margin-bottom: 96px;
-//             }
-
-
-
-//             &--img {
-//                 width: 100%;
-//                 height: 100%;
-
-
-//             }
-//         }
-
-
-
-
-
-
-//     }
-
-//     .about__text {
-//         font-family: "Julius Sans One", sans-serif;
-//         font-weight: 400;
-//         font-size: 20px;
-//         line-height: 1.8;
-//         flex: 1;
-//         width: 1161px;
-//         color: #333;
-//         text-align: justify;
-//         margin: 0 auto;
-//         padding: 20px;
-//         position: relative;
-//         word-wrap: break-word;
-//         margin-left: -30vh;
-
-//         @media (min-width: 1900px) and (max-width: 3500px) {
-//             margin-left: -23vh;
-//         }
-
-//         @media(max-width: 1024px) {
-//             width: 667px;
-//             margin-left: 4vh;
-//         }
-
-//         @media(max-width:767px) {
-//             font-size: 12px;
-//             line-height: 1.2;
-//             width: 410px;
-//             margin-left: 1vh;
-//         }
-
-//         @media(max-width:385px) {
-//             width: 350px;
-//             margin-left: 4vh;
-
-//         }
-
-
-//         p {
-//             margin-bottom: 35px;
-
-//         }
-
-//         &:before,
-//         &:after {
-//             content: ",,";
-//             font-family: "Koulen", sans-serif;
-//             font-weight: 400;
-//             font-size: 128px;
-//             line-height: 180%;
-//             color: #fb7507;
-//             position: absolute;
-//         }
-
-//         &:before {
-//             top: -179px;
-//             left: 19px;
-//         }
-
-//         &:after {
-//             bottom: -56px;
-//             right: 23px;
-
-//             @media(max-width:375px) {}
-
-//         }
-
-
-
-//         span {
-//             font-family: "Kite One", sans-serif;
-//             font-weight: 400;
-//             width: 1125px;
-//             font-size: 20px;
-//             line-height: 144%;
-//             letter-spacing: 0.37em;
-//             display: block;
-//             margin-bottom: 10px;
-
-//             @media(max-width: 1024px) {
-//                 width: 600px;
-//                 margin-left: 0;
-//             }
-
-//             @media(max-width:767px) {
-//                 width: 354px;
-//                 line-height: 127%;
-//                 letter-spacing: 0.2em;
-//             }
-
-//             @media(max-width:378px) {
-//                 width: 330px;
-//                 margin-left: -2vh;
-//             }
-//         }
-
-
-//     }
-
-// }
-
-// // Футер фиксируется снизу, только если контента недостаточно
-// .footer {
-//     margin-top: auto;
-//     background-color: #0f172a;
-//     color: #fff;
-//     padding: 2rem 1rem;
-
-
-//     opacity: 0;
-//     transform: translateY(50px);
-//     transition: opacity 0.6s ease, transform 0.6s ease;
-
-//     &.animated {
-//         opacity: 1;
-//         transform: translateY(0);
-//     }
-
-//     &__container {
-//         display: grid;
-//         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-//         gap: 5rem;
-//         max-width: 1200px;
-//         margin: 0 auto;
-
-//         @media (max-width: 1024px) {
-//             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-//             gap: 2rem;
-//         }
-
-//         @media (max-width: 768px) {
-//             grid-template-columns: 1fr;
-//             /* Один столбец на малых экранах */
-//             gap: 1.5rem;
-//         }
-//     }
-
-//     &__section {
-//         &--logo {
-//             .footer__logo {
-//                 max-width: 100%;
-//                 height: auto;
-//             }
-
-//             .footer__description {
-//                 margin-top: 1rem;
-//                 font-size: 0.875rem;
-//             }
-//         }
-
-//         &--links,
-//         &--contact {
-//             .footer__title {
-//                 font-family: "Koulen", sans-serif;
-//                 font-weight: 400;
-//                 font-size: 24px;
-//                 line-height: 181%;
-//                 letter-spacing: 0.16em;
-//                 margin-bottom: 1rem;
-
-//                 @media (max-width: 1024px) {
-//                     font-size: 20px;
-//                     letter-spacing: 0.1em;
-//                 }
-
-//                 @media (max-width: 768px) {
-//                     font-size: 18px;
-//                     line-height: 150%;
-//                     letter-spacing: 0.08em;
-//                 }
-//             }
-
-//             .footer__list {
-//                 list-style: none;
-//                 padding: 0;
-
-//                 .footer__item {
-//                     margin: 0.5rem 0;
-
-//                     .footer__link {
-//                         font-family: "Koulen", sans-serif;
-//                         color: #fff;
-//                         font-weight: 400;
-//                         font-size: 20px;
-//                         line-height: 180%;
-//                         letter-spacing: 0.36em;
-//                         position: relative;
-//                         transition: color 0.3s ease;
-
-//                         &:hover {
-//                             color: #fb7507;
-//                             /* Меняем цвет текста на оранжевый при наведении */
-//                         }
-
-//                         &:hover::after {
-//                             content: "";
-//                             position: absolute;
-//                             bottom: -5px;
-//                             /* Расстояние от текста до полоски */
-//                             left: 0;
-//                             width: 100%;
-//                             height: 2px;
-//                             background-color: #fb7507;
-//                         }
-
-//                         @media (max-width: 1024px) {
-//                             font-size: 18px;
-//                             letter-spacing: 0.3em;
-//                         }
-
-//                         @media (max-width: 768px) {
-//                             font-size: 16px;
-//                             letter-spacing: 0.2em;
-//                         }
-//                     }
-//                 }
-//             }
-
-//             .footer__address {
-//                 font-family: "Koulen", sans-serif;
-//                 width: 100%;
-//                 /* Адаптивная ширина */
-//                 font-weight: 400;
-//                 font-size: 15px;
-//                 line-height: 181%;
-//                 letter-spacing: 0.18em;
-
-//                 @media (max-width: 1024px) {
-//                     font-size: 14px;
-//                 }
-
-//                 @media (max-width: 768px) {
-//                     font-size: 13px;
-//                 }
-
-//                 .footer__contact {
-//                     color: #fff;
-//                     text-decoration: none;
-
-//                     &:hover {
-//                         color: #fb7507;
-//                         /* Меняем цвет текста на оранжевый при наведении */
-//                     }
-//                 }
-//             }
-//         }
-//     }
-
-//     &__bottom {
-//         text-align: center;
-//         margin-top: 2rem;
-//         font-size: 0.75rem;
-//         border-top: 1px solid rgba(255, 255, 255, 0.1);
-//         padding-top: 1rem;
-//     }
-
-//     &__copyright {
-//         font-family: "Julius Sans One", sans-serif;
-//         font-weight: 700;
-//         font-size: 14px;
-//         line-height: 120%;
-//         letter-spacing: -0.04em;
-//     }
-// }
-
 html {
     overflow-x: hidden;
 }
@@ -480,11 +13,11 @@ body {
 .page {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; // Страница занимает всю высоту экрана
+    min-height: 100vh;
 }
 
 .page__content {
-    flex: 1; // Основной контент растягивается, занимая всю доступную высоту
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -532,9 +65,7 @@ body {
         position: relative;
         width: 100%;
         height: 400px;
-        /* Высота шапки */
         background-image: url("../img/slide-1.jpg");
-        /* Заменить на путь к изображению */
         background-size: cover;
         background-position: center;
         display: flex;
@@ -543,7 +74,6 @@ body {
 
         &-overlay {
             background-color: rgba(0, 0, 0, 0.5);
-            /* Полупрозрачный слой поверх фото */
             width: 100%;
             height: 100%;
             display: flex;
@@ -607,15 +137,15 @@ body {
 
 
         &__container {
-            display: flex; // Располагает элементы в строку (фото + текст)
-            flex-direction: row; // Элементы будут размещены горизонтально
-            align-items: flex-start; // Выравнивание по верху контейнера
-            justify-content: space-between; // Равномерное пространство между элементами (по желанию)
-            flex-wrap: wrap; // Если экран становится узким, элементы переходят на новую строку
-            gap: 20px; // Отступы между элементами
-            width: 100%; // Убедитесь, что контейнер занимает всю ширину
-            max-width: 1200px; // По желанию, ограничьте ширину
-            margin: 0 auto; // Центрирование контейнера
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
         }
 
@@ -772,7 +302,7 @@ body {
 
 }
 
-// Футер фиксируется снизу, только если контента недостаточно
+
 .footer {
     margin-top: auto;
     background-color: #0f172a;
@@ -803,7 +333,6 @@ body {
 
         @media (max-width: 768px) {
             grid-template-columns: 1fr;
-            /* Один столбец на малых экранах */
             gap: 1.5rem;
         }
     }
@@ -862,14 +391,13 @@ body {
 
                         &:hover {
                             color: #fb7507;
-                            /* Меняем цвет текста на оранжевый при наведении */
+
                         }
 
                         &:hover::after {
                             content: "";
                             position: absolute;
                             bottom: -5px;
-                            /* Расстояние от текста до полоски */
                             left: 0;
                             width: 100%;
                             height: 2px;
@@ -892,7 +420,6 @@ body {
             .footer__address {
                 font-family: "Koulen", sans-serif;
                 width: 100%;
-                /* Адаптивная ширина */
                 font-weight: 400;
                 font-size: 15px;
                 line-height: 181%;
@@ -912,7 +439,6 @@ body {
 
                     &:hover {
                         color: #fb7507;
-                        /* Меняем цвет текста на оранжевый при наведении */
                     }
                 }
             }

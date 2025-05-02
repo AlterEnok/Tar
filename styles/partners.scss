@@ -6,18 +6,18 @@
         align-items: center;
         position: relative;
         width: 100%;
-        height: 100vh; // Растянуть секцию на весь экран
+        height: 100vh;
         background-size: cover;
         background-position: center;
         overflow: hidden;
         padding-bottom: clamp(80px, 10vw, 115px);
 
         &-content {
-            background: rgba(0, 0, 0, 0.6); // Затемнение фона
+            background: rgba(0, 0, 0, 0.6);
             padding: 2rem;
             text-align: center;
             color: #fff;
-            z-index: 10; // Чтобы текст был выше фона
+            z-index: 10;
         }
 
         .patrones__title {
@@ -33,6 +33,11 @@
             text-transform: uppercase;
             margin-bottom: 10px;
             text-align: center;
+
+            @media (min-width: 768px) and (max-width: 1023px) {
+                position: relative;
+                top: -8dvh;
+            }
 
             @media(max-width:767px) {
                 width: clamp(250px, 40vw, 365px);
@@ -64,12 +69,23 @@
                 margin-left: clamp(17vh, 6vw, 18vh);
             }
 
+
+
             @media(max-width:1024px) {
                 margin-left: clamp(14vh, 5vw, 23vh);
+                position: relative;
+                top: -3dvh;
+            }
+
+            @media (min-width: 1024px) and (max-width: 1139px) {
+                top: 2dvh;
+                left: -2dvh;
             }
 
             @media(max-width:767px) {
                 margin-left: clamp(11vh, 4vw, 15vh);
+                top: 2dvh;
+                left: -1dvh;
             }
 
             @media(max-width: 385px) {
@@ -92,7 +108,10 @@
         padding: clamp(10px, 2vw, 15px);
         margin-left: clamp(-1vh, 1vw, -1vh);
 
-
+        @media (min-width: 768px) and (max-width: 1023px) {
+            position: relative;
+            top: -5dvh;
+        }
 
         @media(max-width:767px) {
             justify-content: flex-start;

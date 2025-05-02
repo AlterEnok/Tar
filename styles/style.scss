@@ -753,9 +753,12 @@ body {
     background-color: #f9f9f9;
     padding-top: 180px;
     padding-bottom: 163px;
+    display: flex;
+    flex-wrap: nowrap;
 
     @media(max-width: 767px) {
         padding-top: 97px;
+        flex-wrap: wrap;
     }
 
     &__container {
@@ -890,8 +893,10 @@ body {
 
         .text__column {
             margin-left: 93px;
-            font-size: 24px;
-            max-width: 373px;
+            font-size: 22px;
+            line-height: 130%;
+            letter-spacing: 0.1em;
+            max-width: 353px;
             padding-top: 50px;
 
             @media(max-width: 1024px) {
@@ -923,8 +928,11 @@ body {
 
 
         &__left {
-            flex: 1 1 60%;
-            max-width: 60%;
+            // flex: 1 1 60%;
+            // max-width: 60%;
+            flex: 1 1 50%;
+            max-width: 600px;
+            min-width: 300px;
 
 
             @media (max-width: 767px) {
@@ -933,12 +941,16 @@ body {
             }
         }
 
+        .advantages__icon {
+            max-width: 260%;
 
+        }
 
         &__image {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
+            object-fit: cover;
         }
 
         &-title {
@@ -1000,6 +1012,10 @@ body {
                 font-size: 16px;
             }
         }
+    }
+
+    .advantages__support span:last-of-type {
+        margin-left: 16px;
     }
 
     &__button {

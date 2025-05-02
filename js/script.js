@@ -242,13 +242,10 @@ links.forEach(link => {
 document.addEventListener("DOMContentLoaded", () => {
     const photo = document.querySelector(".about__photo");
 
-    if (!photo) {
-        console.warn("❌ Элемент .about__photo не найден!");
-        return;
-    }
+
 
     gsap.to(photo, {
-        borderColor: "#ffd9b3", // Еще светлее для большего контраста
+        borderColor: "#ffd9b3",
         duration: 1,
         ease: "power1.inOut",
         yoyo: true,
@@ -268,8 +265,8 @@ gsap.to(".about__text p", {
     ease: "power3.out",
     scrollTrigger: {
         trigger: ".about__text",
-        start: "top 80%",  // Запускается, когда верх блока доходит до 80% экрана
-        toggleActions: "play none none none"  // Анимация срабатывает один раз
+        start: "top 80%",
+        toggleActions: "play none none none"
     }
 });
 
@@ -279,20 +276,20 @@ gsap.to(".about__text p", {
 document.addEventListener("DOMContentLoaded", () => {
     const logos = document.querySelectorAll(".patrones__logo");
 
-    // Устанавливаем начальные стили (чтобы логотипы были скрыты)
+
     gsap.set(logos, { opacity: 0, y: 30 });
 
-    // Анимация появления при загрузке
+
     gsap.to(logos, {
         opacity: 1,
         y: 0,
         scale: 1,
         duration: 0.8,
-        stagger: 0.15, // Логотипы появляются один за другим
+        stagger: 0.15,
         ease: "power3.out",
     });
 
-    // Параллакс при скролле
+
     gsap.utils.toArray(".patrones__logo").forEach((logo) => {
         gsap.to(logo, {
             y: -20,
@@ -306,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Добавляем эффект подпрыгивания при наведении
+
     logos.forEach((logo) => {
         logo.addEventListener("mouseenter", () => {
             gsap.to(logo, { scale: 1.15, rotation: 2, duration: 0.3, ease: "elastic.out(1,0.3)" });
@@ -366,11 +363,11 @@ gsap.utils.toArray('.angebot__item').forEach((item, index) => {
     gsap.to(item, {
         opacity: 1,
         x: 0,
-        rotateY: 0, // Плавный возврат карточек в исходное положение
-        duration: 0.8, // Ускорено
-        delay: index * 0.15, // Ускоренный каскадный эффект
-        ease: "power4.out", // Более резкий и эффектный easing
-        transformPerspective: 1000, // Глубина 3D-эффекта
+        rotateY: 0,
+        duration: 0.8,
+        delay: index * 0.15,
+        ease: "power4.out",
+        transformPerspective: 1000,
         scrollTrigger: {
             trigger: item,
             start: "top 85%",
@@ -379,36 +376,82 @@ gsap.utils.toArray('.angebot__item').forEach((item, index) => {
     });
 });
 
-/*MODAL */
+/* ==== SCROLL LOCK HELPERS ==== */
+function disableScroll() {
+    document.documentElement.classList.add('scroll-lock');
+}
+
+function enableScroll() {
+    document.documentElement.classList.remove('scroll-lock');
+}
+
+/* ==== MODAL ==== */
 const modal = document.getElementById("modal");
 const modalDescription = document.getElementById("modal-description");
+const modalImage = document.getElementById("modal-image");
 const closeModal = document.querySelector(".modal__close");
 const openModalButtons = document.querySelectorAll(".modal-open");
 
-if (modal && modalDescription) {
-    // Функция открытия модального окна
+if (modal && modalDescription && modalImage) {
     openModalButtons.forEach((button) => {
         button.addEventListener("click", (e) => {
             e.preventDefault();
-            const description = button.dataset.description; // Получаем текст из data-description
+            const description = button.dataset.description;
+            const imageSrc = button.dataset.img;
+
             if (description) {
-                modalDescription.textContent = description; // Устанавливаем текст
+                modalDescription.textContent = description;
             }
+
+            if (imageSrc) {
+                modalImage.src = imageSrc;
+                modalImage.style.display = "block";
+            } else {
+                modalImage.style.display = "none";
+            }
+
             modal.classList.add("show");
+            disableScroll();
         });
     });
 
-    // Закрытие модального окна
     closeModal.addEventListener("click", () => {
         modal.classList.remove("show");
+        enableScroll();
     });
 
-    // Закрытие при клике вне модального контента
     window.addEventListener("click", (e) => {
         if (e.target === modal) {
             modal.classList.remove("show");
+            enableScroll();
         }
     });
 } else {
-    console.error("Modal or modal description element is missing!");
+    console.error("Modal, description or image element is missing!");
 }
+
+/* ==== FORM ==== */
+const contactModal = document.getElementById('contact-form-modal');
+const contactButtons = document.querySelectorAll('.angebot__button, .beratung-button');
+const closeFormButton = contactModal.querySelector('.modal__close');
+
+contactButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        contactModal.style.display = 'flex';
+        disableScroll();
+    });
+});
+
+closeFormButton.addEventListener('click', () => {
+    contactModal.style.display = 'none';
+    enableScroll();
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === contactModal) {
+        contactModal.style.display = 'none';
+        enableScroll();
+    }
+});
+
+
