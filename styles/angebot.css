@@ -217,7 +217,7 @@
   .angebot__info .angebot__product-title {
     font-size: 12px;
     text-align: center;
-    top: 6vh;
+    top: 9vh;
     left: auto;
     min-width: auto;
     margin: 0 auto 10px;
@@ -456,6 +456,19 @@
 .angebot .angebot__cta .beratung-button:hover .beratung-button__icon {
   transform: translateX(480%);
 }
+@media (max-width: 768px) {
+  .angebot .angebot__cta .beratung-button {
+    font-size: 1.5rem;
+  }
+  .angebot .angebot__cta .beratung-button__icon {
+    width: 5.6rem;
+    height: 3.6rem;
+  }
+  .angebot .angebot__cta .beratung-button__icon svg {
+    width: 1.6rem;
+    height: auto;
+  }
+}
 
 .modal {
   display: none;
@@ -522,6 +535,7 @@
   font-weight: bold;
   cursor: pointer;
   border: none;
+  background: transparent;
 }
 
 .modal.show {

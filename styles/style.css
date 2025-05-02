@@ -61,9 +61,7 @@ html {
   position: relative;
   width: 100%;
   height: 400px;
-  /* Высота шапки */
   background-image: url("../img/slide-1.jpg");
-  /* Заменить на путь к изображению */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -72,7 +70,6 @@ html {
 }
 .about__intro-overlay {
   background-color: rgba(0, 0, 0, 0.5);
-  /* Полупрозрачный слой поверх фото */
   width: 100%;
   height: 100%;
   display: flex;
@@ -288,7 +285,6 @@ html {
 @media (max-width: 768px) {
   .footer__container {
     grid-template-columns: 1fr;
-    /* Один столбец на малых экранах */
     gap: 1.5rem;
   }
 }
@@ -340,13 +336,11 @@ html {
 }
 .footer__section--links .footer__list .footer__item .footer__link:hover, .footer__section--contact .footer__list .footer__item .footer__link:hover {
   color: #fb7507;
-  /* Меняем цвет текста на оранжевый при наведении */
 }
 .footer__section--links .footer__list .footer__item .footer__link:hover::after, .footer__section--contact .footer__list .footer__item .footer__link:hover::after {
   content: "";
   position: absolute;
   bottom: -5px;
-  /* Расстояние от текста до полоски */
   left: 0;
   width: 100%;
   height: 2px;
@@ -367,7 +361,6 @@ html {
 .footer__section--links .footer__address, .footer__section--contact .footer__address {
   font-family: "Koulen", sans-serif;
   width: 100%;
-  /* Адаптивная ширина */
   font-weight: 400;
   font-size: 15px;
   line-height: 181%;
@@ -389,7 +382,6 @@ html {
 }
 .footer__section--links .footer__address .footer__contact:hover, .footer__section--contact .footer__address .footer__contact:hover {
   color: #fb7507;
-  /* Меняем цвет текста на оранжевый при наведении */
 }
 .footer__bottom {
   text-align: center;
@@ -1343,7 +1335,7 @@ html {
   .angebot__info .angebot__product-title {
     font-size: 12px;
     text-align: center;
-    top: 6vh;
+    top: 9vh;
     left: auto;
     min-width: auto;
     margin: 0 auto 10px;

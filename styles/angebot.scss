@@ -233,7 +233,7 @@
             @media (max-width: 768px) {
                 font-size: 12px;
                 text-align: center;
-                top: 6vh;
+                top: 9vh;
                 left: auto;
                 min-width: auto;
                 margin: 0 auto 10px;
@@ -503,6 +503,21 @@
                     transform: translateX(480%);
                 }
             }
+
+            @media (max-width: 768px) {
+                font-size: 1.5rem;
+
+                &__icon {
+                    width: 5.6rem;
+                    height: 3.6rem;
+
+                    svg {
+                        width: 1.6rem;
+                        height: auto;
+                    }
+                }
+            }
+
         }
     }
 }
@@ -572,6 +587,7 @@
     font-weight: bold;
     cursor: pointer;
     border: none;
+    background: transparent;
 }
 
 
