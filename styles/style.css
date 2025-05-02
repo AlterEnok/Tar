@@ -1342,6 +1342,9 @@ html {
     padding: 0 10px;
   }
 }
+.angebot__info .angebot__item:nth-child(2) .angebot__product-title {
+  top: -3vh;
+}
 .angebot__info .angebot__description {
   font-weight: 400;
   font-size: 18px;
@@ -1515,7 +1518,7 @@ html {
 }
 @media (max-width: 768px) {
   .angebot .angebot__item:nth-child(5) .angebot__product-title {
-    font-size: 12px;
+    font-size: 10px;
     top: 8vh;
   }
 }
@@ -1573,6 +1576,19 @@ html {
 }
 .angebot .angebot__cta .beratung-button:hover .beratung-button__icon {
   transform: translateX(480%);
+}
+@media (max-width: 768px) {
+  .angebot .angebot__cta .beratung-button {
+    font-size: 1.5rem;
+  }
+  .angebot .angebot__cta .beratung-button__icon {
+    width: 5.6rem;
+    height: 3.6rem;
+  }
+  .angebot .angebot__cta .beratung-button__icon svg {
+    width: 1.6rem;
+    height: auto;
+  }
 }
 
 .modal {
@@ -1640,6 +1656,7 @@ html {
   font-weight: bold;
   cursor: pointer;
   border: none;
+  background: transparent;
 }
 
 .modal.show {

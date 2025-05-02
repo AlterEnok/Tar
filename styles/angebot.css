@@ -197,7 +197,7 @@
   color: #f27b21;
   margin-bottom: 10px;
   position: relative;
-  top: -7vh;
+  top: -3vh;
   left: 1vh;
   min-width: 715%;
 }
@@ -217,12 +217,15 @@
   .angebot__info .angebot__product-title {
     font-size: 12px;
     text-align: center;
-    top: 9vh;
+    top: 8vh;
     left: auto;
     min-width: auto;
     margin: 0 auto 10px;
     padding: 0 10px;
   }
+}
+.angebot__info .angebot__item:nth-child(2) .angebot__product-title {
+  top: -3vh;
 }
 .angebot__info .angebot__description {
   font-weight: 400;
