@@ -26,7 +26,7 @@ const heroSlider = new Swiper('.hero__slider', {
         slideShadows: true,
     },
     autoplay: {
-        delay: 5000,
+        delay: 15000,
         disableOnInteraction: false,
     },
     speed: 1500,
@@ -79,7 +79,7 @@ const partnersSlider = new Swiper('.partners__slider', {
     spaceBetween: 20,
     loop: true,
     autoplay: {
-        delay: 3000,
+        delay: 13000,
         disableOnInteraction: false,
     },
     speed: 800,
@@ -426,8 +426,6 @@ if (modal && modalDescription && modalImage) {
             enableScroll();
         }
     });
-} else {
-    console.error("Modal, description or image element is missing!");
 }
 
 /* ==== FORM ==== */
