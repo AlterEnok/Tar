@@ -79,7 +79,7 @@ const partnersSlider = new Swiper('.partners__slider', {
     spaceBetween: 20,
     loop: true,
     autoplay: {
-        delay: 13000,
+        delay: 1200,
         disableOnInteraction: false,
     },
     speed: 800,
