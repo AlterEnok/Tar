@@ -1755,9 +1755,11 @@ main {
 
     &__title {
         font-size: 3rem;
-        margin-bottom: 7rem;
+        margin-bottom: 11rem;
         font-family: 'Julius Sans One', sans-serif;
         text-align: center;
+        position: relative;
+        top: 13dvh;
 
         .allgemeine__title--sub {
             display: block;
@@ -1808,4 +1810,74 @@ main {
 
 .allgemeine__text a:hover {
     color: orange;
+}
+
+
+@media (max-width: 768px) {
+    .allgemeine {
+        padding: 2rem 1rem;
+
+        &__title {
+            font-size: 2.2rem;
+            margin-bottom: 4rem;
+            top: 10dvh;
+
+            .allgemeine__title--sub {
+                font-size: 0.9rem;
+            }
+        }
+
+        &__section-title {
+            font-size: 1.4rem;
+        }
+
+        &__subsection-title {
+            font-size: 1.1rem;
+        }
+
+        &__text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+    }
+
+    .allgemeine__list {
+        padding-left: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .allgemeine {
+        padding: 1.5rem 0.75rem;
+
+        &__title {
+            font-size: 1.8rem;
+            margin-bottom: 9rem;
+            top: 12dvh;
+
+            .allgemeine__title--sub {
+                font-size: 0.85rem;
+            }
+        }
+
+        &__section-title {
+            font-size: 1.2rem;
+        }
+
+        &__subsection-title {
+            font-size: 1rem;
+        }
+
+        &__text {
+            font-size: 0.9rem;
+        }
+    }
+
+    .allgemeine__list {
+        padding-left: 1.2rem;
+        font-size: 0.9rem;
+        line-height: 1.9;
+    }
 }
