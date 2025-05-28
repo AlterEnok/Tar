@@ -1621,6 +1621,13 @@ main {
     font-family: 'Julius Sans One', sans-serif;
     position: relative;
     top: 16dvh;
+
+    .datenschutz__title--sub {
+        display: block;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        color: rgba(0, 0, 0, 0.7);
+    }
 }
 
 .datenschutz__text {
@@ -1726,3 +1733,79 @@ main {
 }
 
 ///////DATENSCHUTZ/////
+
+// AGB
+
+.allgemeine {
+    min-height: calc(130vh - 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: #fdf9f9;
+    color: #000;
+    text-align: center;
+
+    &__container {
+        padding: 20px clamp(16px, 5vw, 80px);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin-bottom: 7rem;
+        font-family: 'Julius Sans One', sans-serif;
+        text-align: center;
+
+        .allgemeine__title--sub {
+            display: block;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            color: rgba(0, 0, 0, 0.7);
+        }
+    }
+
+    &__section-title {
+        font-size: 1.8rem;
+        margin-top: 3rem;
+        margin-bottom: 1.2rem;
+        font-family: 'Julius Sans One', sans-serif;
+    }
+
+    &__subsection-title {
+        font-family: 'K2D', sans-serif;
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+        font-weight: bold;
+    }
+
+    &__text {
+        font-size: 1rem;
+        font-family: 'K2D', sans-serif;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+
+    }
+}
+
+.allgemeine__list {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    list-style-type: disc;
+    text-align: left;
+    max-width: 700px;
+    margin-inline: auto;
+    line-height: 2.5;
+}
+
+.allgemeine__text a {
+    color: inherit;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.allgemeine__text a:hover {
+    color: orange;
+}
