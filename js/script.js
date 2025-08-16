@@ -215,56 +215,14 @@ window.addEventListener('load', function () {
     const preloader = document.querySelector('.preloader');
 
     if (preloader) {
-        const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
-        const firstSessionVisit = !sessionStorage.getItem('visited');
 
-        if (isHome && firstSessionVisit) {
+        preloader.innerHTML = `<img src="img/logo.svg" alt="Logo" class="preloader__logo">`;
 
-            preloader.innerHTML = `<img src="img/logo.svg" alt="Logo" class="preloader__logo">`;
-
-            sessionStorage.setItem('visited', 'true');
-
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-            }, 1000);
-
-        } else {
-            // На остальных страницах → сразу кружки
-            preloader.innerHTML = `
-                <div class="preloader__ball"></div>
-                <div class="preloader__ball"></div>
-                <div class="preloader__ball"></div>
-            `;
-            preloader.classList.add('hidden');
-        }
-    }
-});
-
-
-
-const links = document.querySelectorAll('a[href]');
-links.forEach(link => {
-    link.addEventListener('click', function (event) {
-        const href = link.getAttribute('href');
-        const preloader = document.querySelector('.preloader');
-
-        if (!preloader || href.startsWith('#') || href === window.location.pathname) return;
-
-        event.preventDefault();
-
-        // Для внутренних переходов → всегда кружки
-        preloader.innerHTML = `
-            <div class="preloader__ball"></div>
-            <div class="preloader__ball"></div>
-            <div class="preloader__ball"></div>
-        `;
-
-        preloader.classList.remove('hidden');
 
         setTimeout(() => {
-            window.location.href = link.href;
-        }, 1000);
-    });
+            preloader.classList.add('hidden');
+        }, 900);
+    }
 });
 
 
