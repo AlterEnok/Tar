@@ -1016,7 +1016,7 @@ body {
         margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 60px;
 
         &-item {
             font-family: "K2D", sans-serif;
@@ -1040,8 +1040,8 @@ body {
 
     &__button {
         position: absolute;
-        bottom: 30px;
-        left: 30%;
+        bottom: 200px;
+        left: 25%;
         transform: translateX(-50%);
         border: 2px solid rgba(0, 0, 0, 0.9);
         border-radius: 21px;
