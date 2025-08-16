@@ -213,10 +213,33 @@ document.querySelectorAll('.header__link').forEach(link => {
 
 window.addEventListener('load', function () {
     const preloader = document.querySelector('.preloader');
+
     if (preloader) {
-        preloader.classList.add('hidden');
+        const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+        const firstSessionVisit = !sessionStorage.getItem('visited');
+
+        if (isHome && firstSessionVisit) {
+
+            preloader.innerHTML = `<img src="img/logo.svg" alt="Logo" class="preloader__logo">`;
+
+            sessionStorage.setItem('visited', 'true');
+
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 1000);
+
+        } else {
+            // На остальных страницах → сразу кружки
+            preloader.innerHTML = `
+                <div class="preloader__ball"></div>
+                <div class="preloader__ball"></div>
+                <div class="preloader__ball"></div>
+            `;
+            preloader.classList.add('hidden');
+        }
     }
 });
+
 
 
 const links = document.querySelectorAll('a[href]');
@@ -225,10 +248,17 @@ links.forEach(link => {
         const href = link.getAttribute('href');
         const preloader = document.querySelector('.preloader');
 
-
         if (!preloader || href.startsWith('#') || href === window.location.pathname) return;
 
         event.preventDefault();
+
+        // Для внутренних переходов → всегда кружки
+        preloader.innerHTML = `
+            <div class="preloader__ball"></div>
+            <div class="preloader__ball"></div>
+            <div class="preloader__ball"></div>
+        `;
+
         preloader.classList.remove('hidden');
 
         setTimeout(() => {
@@ -236,6 +266,7 @@ links.forEach(link => {
         }, 1000);
     });
 });
+
 
 
 // UBER UNS
@@ -450,6 +481,26 @@ window.addEventListener('click', (e) => {
         contactModal.style.display = 'none';
         enableScroll();
     }
+});
+
+// Товары
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    fetch('/api/products') // Заменишь URL
+        .then(response => response.json())
+        .then(products => {
+            const select = document.getElementById('productSelect');
+            products.forEach(product => {
+                const option = document.createElement('option');
+                option.value = product.id;
+                option.textContent = product.name;
+                select.appendChild(option);
+            });
+        })
+        .catch(err => {
+            console.error('Ошибка загрузки списка товаров:', err);
+        });
 });
 
 

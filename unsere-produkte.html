@@ -177,6 +177,52 @@
                             <button class="angebot__button">Kontaktieren <br>Sie uns</button>
                         </div>
                     </div>
+
+                    <div class="angebot__item">
+                        <div class="angebot__image-wrapper">
+                            <div class="angebot__image angebot__image--front angebot__image--adjust"
+                                style="background-image: url('img/angebot/angebot6.png');"></div>
+                            <div class="angebot__image angebot__image--back"
+                                style="background-image: url('img/angebot/angebot6.png');">
+                            </div>
+                        </div>
+                        <div class="angebot__info">
+                            <h3 class="angebot__product-title">Wireless M-Bus Gateway V4</h3>
+                            <p class="angebot__description">Universelles Gateway zur Fernablesung von wireless M-Bus
+                                (868 MHz) und Sensus RF Zählern (z.B. Wasser, Heizung) via
+                                NB-IoT, LTE-M oder LoRaWAN. Ideal für unterjährige Verbrauchsdaten und Abrechnung in der
+                                Wohnungswirtschaft oder
+                                Mieterstromprojekte. Batteriebetrieb oder externe Stromversorgung.
+
+                                <br>Unterstützt LoRaWAN, LTE-M (MQTT) und NB-IoT (CoAP).
+                            </p>
+
+                            <button class="angebot__button">Kontaktieren <br>Sie uns</button>
+                        </div>
+                    </div>
+
+                    <div class="angebot__item">
+                        <div class="angebot__image-wrapper">
+                            <div class="angebot__image angebot__image--front angebot__image--adjust"
+                                style="background-image: url('img/angebot/angebot7.png');"></div>
+                            <div class="angebot__image angebot__image--back"
+                                style="background-image: url('img/angebot/angebot7.png');">
+                            </div>
+                        </div>
+                        <div class="angebot__info">
+                            <h3 class="angebot__product-title">Sharky 774 Compact</h3>
+                            <p class="angebot__description">Der Ultraschall-Kompakt-Energiezähler kann eingesetzt werden
+                                für die Erfassung aller abrechnungsrelevanten Daten zur
+                                Messung des Energieverbrauchs in Wärme- und Kälteanlagen. Das Messprinzip ist statisch.
+                                Das Ultraschall Messprinzip
+                                liefert viele Vorteile: keine bewegten Teile (weniger Abnutzung und Verschmutzung des
+                                Zählers), geringer Druckverlust,
+                                große Messdynamik und geringer Anlaufwert, unanfällig gegen gelöste Teilchen.
+                            </p>
+
+                            <button class="angebot__button">Kontaktieren <br>Sie uns</button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="angebot__cta">
@@ -246,7 +292,7 @@
                             placeholder="Telefonnummer (z. B. +49 170 1234567)" required autocomplete="tel" />
                     </div>
 
-                    <div class="modal__form-group modal__form-select">
+                    <!-- <div class="modal__form-group modal__form-select">
                         <select name="device_type" required>
                             <option value="" disabled selected>Art der Ausrüstung</option>
                             <option value="gerät1">Funk-Wasserzähler Q water 5.5</option>
@@ -254,9 +300,19 @@
                             <option value="gerät3">Heizkostenverteiler Q caloric 5.5</option>
                             <option value="gerät4">Q gateway 6 direct – Intelligente Fernablesung leicht gemacht
                             </option>
+                            <option value="gerät5">Wireless M-Bus Gateway V4</option>
+                            <option value="gerät6">Sharky 774 Compact</option>
                             <option value="unsicher">Ich bin mir nicht sicher</option>
                         </select>
+                    </div> -->
+
+                    <div class="modal__form-group modal__form-select">
+                        <select id="productSelect" name="device_type" required>
+                            <option value="" disabled selected>Art der Ausrüstung</option>
+                        </select>
                     </div>
+
+
 
                     <div class="modal__form-group">
                         <textarea id="nachricht" name="message" placeholder="Nachricht" required></textarea>
