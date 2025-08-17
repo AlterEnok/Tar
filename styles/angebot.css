@@ -215,9 +215,9 @@
 }
 @media (max-width: 768px) {
   .angebot__info .angebot__product-title {
-    font-size: 12px;
+    font-size: 19px;
     text-align: center;
-    top: 8vh;
+    top: 7vh;
     left: auto;
     min-width: auto;
     margin: 0 auto 10px;
@@ -246,7 +246,7 @@
 }
 @media (max-width: 768px) {
   .angebot__info .angebot__description {
-    font-size: 12px;
+    font-size: 11px;
     top: 5vh;
     left: -1vh;
     text-align: center;
@@ -292,7 +292,7 @@
 }
 .angebot__button {
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   left: 45%;
   transform: translateX(-50%);
   border: 2px solid rgba(244, 238, 238, 0.9);
@@ -385,23 +385,44 @@
 }
 @media (max-width: 768px) {
   .angebot .angebot__item:nth-child(2) .angebot__product-title {
-    font-size: 25px;
+    font-size: 29px;
+    top: 7dvh;
   }
 }
 @media (max-width: 768px) {
   .angebot .angebot__item:nth-child(3) .angebot__product-title {
-    font-size: 16px;
+    font-size: 23px;
   }
 }
 @media (max-width: 768px) {
   .angebot .angebot__item:nth-child(4) .angebot__product-title {
     font-size: 20px;
   }
+  .angebot .angebot__item:nth-child(4) .angebot__info .angebot__description {
+    font-size: 12px;
+  }
 }
 @media (max-width: 768px) {
   .angebot .angebot__item:nth-child(5) .angebot__product-title {
+    font-size: 13px;
+    top: 7vh;
+  }
+}
+@media (max-width: 768px) {
+  .angebot .angebot__item:nth-child(6) .angebot__product-title {
+    font-size: 20px;
+  }
+  .angebot .angebot__item:nth-child(6) .angebot__info .angebot__description {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .angebot .angebot__item:nth-child(8) .angebot__product-title {
+    font-size: 22px;
+    top: 5dvh;
+  }
+  .angebot .angebot__item:nth-child(8) .angebot__info .angebot__description {
     font-size: 10px;
-    top: 8vh;
   }
 }
 .angebot .angebot__cta {

@@ -1410,7 +1410,7 @@ html {
 }
 .angebot__button {
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   left: 45%;
   transform: translateX(-50%);
   border: 2px solid rgba(244, 238, 238, 0.9);
