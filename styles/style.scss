@@ -86,22 +86,30 @@ body {
     width: 100vw;
     height: 100vh;
     background: #fff;
+    z-index: 10001;
+    opacity: 1;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10001;
-    transition: opacity 0.5s ease-out;
-    opacity: 1;
 
-    &.hidden {
-        opacity: 0;
-        pointer-events: none;
-    }
-
+    // плавно скрываем не сам фон, а внутренность
     &__content {
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: opacity 0.5s ease-out;
+        opacity: 1;
+    }
+
+    &.hidden {
+        .preloader__content {
+            opacity: 0; // исчезает только контент
+        }
+    }
+
+    &.gone {
+        display: none; // полностью убираем прелоадер
     }
 
     &__ball {
@@ -125,19 +133,6 @@ body {
         width: 180px;
         height: auto;
         animation: fadeIn 0.6s ease forwards;
-    }
-
-    @keyframes bounce {
-
-        0%,
-        80%,
-        100% {
-            transform: scale(1);
-        }
-
-        40% {
-            transform: scale(1.5);
-        }
     }
 }
 

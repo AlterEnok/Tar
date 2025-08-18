@@ -216,23 +216,26 @@ window.addEventListener('load', function () {
     const content = preloader.querySelector('.preloader__content');
 
     if (preloader) {
-        // Проверка: первый визит или нет
         if (sessionStorage.getItem('preloaderShown')) {
-            // уже был → показываем три точки
             content.innerHTML = `
         <div class="preloader__ball"></div>
         <div class="preloader__ball"></div>
         <div class="preloader__ball"></div>
       `;
         } else {
-            // первый раз → показываем логотип
             content.innerHTML = `<img src="img/logo.svg" alt="Logo" class="preloader__logo">`;
             sessionStorage.setItem('preloaderShown', 'true');
         }
 
+        // сначала плавно убираем только содержимое
         setTimeout(() => {
             preloader.classList.add('hidden');
         }, 900);
+
+        // потом убираем сам фон, чтобы не мешал
+        setTimeout(() => {
+            preloader.classList.add('gone');
+        }, 1400);
     }
 });
 
