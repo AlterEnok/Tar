@@ -213,17 +213,29 @@ document.querySelectorAll('.header__link').forEach(link => {
 
 window.addEventListener('load', function () {
     const preloader = document.querySelector('.preloader');
+    const content = preloader.querySelector('.preloader__content');
 
     if (preloader) {
-
-        preloader.innerHTML = `<img src="img/logo.svg" alt="Logo" class="preloader__logo">`;
-
+        // Проверка: первый визит или нет
+        if (sessionStorage.getItem('preloaderShown')) {
+            // уже был → показываем три точки
+            content.innerHTML = `
+        <div class="preloader__ball"></div>
+        <div class="preloader__ball"></div>
+        <div class="preloader__ball"></div>
+      `;
+        } else {
+            // первый раз → показываем логотип
+            content.innerHTML = `<img src="img/logo.svg" alt="Logo" class="preloader__logo">`;
+            sessionStorage.setItem('preloaderShown', 'true');
+        }
 
         setTimeout(() => {
             preloader.classList.add('hidden');
         }, 900);
     }
 });
+
 
 
 
