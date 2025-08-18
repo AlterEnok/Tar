@@ -211,52 +211,28 @@ document.querySelectorAll('.header__link').forEach(link => {
 
 /*PRELOADER */
 
-// window.addEventListener('load', function () {
-//     const preloader = document.querySelector('.preloader');
-
-//     if (preloader) {
-//         if (sessionStorage.getItem('preloaderShown')) {
-//             preloader.classList.add('show-dots');
-//         } else {
-//             preloader.classList.add('show-logo');
-//             sessionStorage.setItem('preloaderShown', 'true');
-//         }
-
-//         setTimeout(() => {
-//             preloader.classList.add('hidden');
-//         }, 900);
-
-//         setTimeout(() => {
-//             preloader.classList.add('gone');
-//         }, 1400);
-//     }
-// });
-
 window.addEventListener('load', function () {
     const preloader = document.querySelector('.preloader');
+
     if (preloader) {
-        preloader.classList.add('hidden');
+        if (sessionStorage.getItem('preloaderShown')) {
+            preloader.classList.add('show-dots');
+        } else {
+            preloader.classList.add('show-logo');
+            sessionStorage.setItem('preloaderShown', 'true');
+        }
+
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+        }, 900);
+
+        setTimeout(() => {
+            preloader.classList.add('gone');
+        }, 1400);
     }
 });
 
 
-const links = document.querySelectorAll('a[href]');
-links.forEach(link => {
-    link.addEventListener('click', function (event) {
-        const href = link.getAttribute('href');
-        const preloader = document.querySelector('.preloader');
-
-
-        if (!preloader || href.startsWith('#') || href === window.location.pathname) return;
-
-        event.preventDefault();
-        preloader.classList.remove('hidden');
-
-        setTimeout(() => {
-            window.location.href = link.href;
-        }, 1000);
-    });
-});
 
 
 // UBER UNS

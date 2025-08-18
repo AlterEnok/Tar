@@ -1900,16 +1900,32 @@ body {
   width: 100vw;
   height: 100vh;
   background: #fff;
+  z-index: 10001;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+}
+.preloader__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: opacity 0.5s ease-out;
   opacity: 1;
 }
-.preloader.hidden {
+.preloader.hidden .preloader__content {
   opacity: 0;
-  pointer-events: none;
+}
+.preloader.gone {
+  display: none;
+}
+.preloader__logo, .preloader__balls {
+  display: none;
+}
+.preloader.show-logo .preloader__logo {
+  display: block;
+}
+.preloader.show-dots .preloader__balls {
+  display: flex;
 }
 .preloader__ball {
   width: 20px;
@@ -1924,6 +1940,11 @@ body {
 }
 .preloader__ball:nth-child(3) {
   animation-delay: 0.4s;
+}
+.preloader__logo {
+  width: 180px;
+  height: auto;
+  animation: fadeIn 0.6s ease forwards;
 }
 
 @keyframes bounce {
