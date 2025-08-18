@@ -213,26 +213,19 @@ document.querySelectorAll('.header__link').forEach(link => {
 
 window.addEventListener('load', function () {
     const preloader = document.querySelector('.preloader');
-    const content = preloader.querySelector('.preloader__content');
 
     if (preloader) {
         if (sessionStorage.getItem('preloaderShown')) {
-            content.innerHTML = `
-        <div class="preloader__ball"></div>
-        <div class="preloader__ball"></div>
-        <div class="preloader__ball"></div>
-      `;
+            preloader.classList.add('show-dots');
         } else {
-            content.innerHTML = `<img src="img/logo.svg" alt="Logo" class="preloader__logo">`;
+            preloader.classList.add('show-logo');
             sessionStorage.setItem('preloaderShown', 'true');
         }
 
-        // исчезает только контент
         setTimeout(() => {
             preloader.classList.add('hidden');
         }, 900);
 
-        // через паузу полностью убираем белый фон
         setTimeout(() => {
             preloader.classList.add('gone');
         }, 1400);

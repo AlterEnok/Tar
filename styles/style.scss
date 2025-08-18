@@ -87,7 +87,6 @@ body {
     height: 100vh;
     background: #fff;
     z-index: 10001;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,11 +100,24 @@ body {
     }
 
     &.hidden .preloader__content {
-        opacity: 0; // исчезает только контент
+        opacity: 0;
     }
 
     &.gone {
-        display: none; // полностью убираем весь экран
+        display: none;
+    }
+
+    &__logo,
+    &__balls {
+        display: none;
+    }
+
+    &.show-logo .preloader__logo {
+        display: block;
+    }
+
+    &.show-dots .preloader__balls {
+        display: flex;
     }
 
     &__ball {

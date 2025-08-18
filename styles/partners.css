@@ -12,6 +12,11 @@
   overflow: hidden;
   padding-bottom: clamp(80px, 10vw, 115px);
 }
+@media (max-width: 767px) {
+  .patrones__intro {
+    height: 100vh;
+  }
+}
 .patrones__intro-content {
   background: rgba(0, 0, 0, 0.6);
   padding: 2rem;

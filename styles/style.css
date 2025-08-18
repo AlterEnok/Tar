@@ -1911,6 +1911,15 @@ body {
 .preloader.gone {
   display: none;
 }
+.preloader__logo, .preloader__balls {
+  display: none;
+}
+.preloader.show-logo .preloader__logo {
+  display: block;
+}
+.preloader.show-dots .preloader__balls {
+  display: flex;
+}
 .preloader__ball {
   width: 20px;
   height: 20px;
