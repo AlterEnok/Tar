@@ -227,12 +227,12 @@ window.addEventListener('load', function () {
             sessionStorage.setItem('preloaderShown', 'true');
         }
 
-        // сначала плавно убираем только содержимое
+        // исчезает только контент
         setTimeout(() => {
             preloader.classList.add('hidden');
         }, 900);
 
-        // потом убираем сам фон, чтобы не мешал
+        // через паузу полностью убираем белый фон
         setTimeout(() => {
             preloader.classList.add('gone');
         }, 1400);
