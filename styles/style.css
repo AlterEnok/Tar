@@ -411,6 +411,11 @@ html {
   overflow: hidden;
   padding-bottom: clamp(80px, 10vw, 115px);
 }
+@media (max-width: 767px) {
+  .patrones__intro {
+    height: 100vh;
+  }
+}
 .patrones__intro-content {
   background: rgba(0, 0, 0, 0.6);
   padding: 2rem;
@@ -441,6 +446,8 @@ html {
 @media (max-width: 767px) {
   .patrones__intro .patrones__title {
     width: clamp(250px, 40vw, 365px);
+    position: relative;
+    left: 1dvh;
   }
 }
 .patrones__intro .patrones__link {
@@ -484,7 +491,7 @@ html {
   .patrones__intro .patrones__link {
     margin-left: clamp(11vh, 4vw, 15vh);
     top: 2dvh;
-    left: -1dvh;
+    left: 1dvh;
   }
 }
 @media (max-width: 385px) {
@@ -1893,32 +1900,16 @@ body {
   width: 100vw;
   height: 100vh;
   background: #fff;
-  z-index: 10001;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.preloader__content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 1000;
   transition: opacity 0.5s ease-out;
   opacity: 1;
 }
-.preloader.hidden .preloader__content {
+.preloader.hidden {
   opacity: 0;
-}
-.preloader.gone {
-  display: none;
-}
-.preloader__logo, .preloader__balls {
-  display: none;
-}
-.preloader.show-logo .preloader__logo {
-  display: block;
-}
-.preloader.show-dots .preloader__balls {
-  display: flex;
+  pointer-events: none;
 }
 .preloader__ball {
   width: 20px;
@@ -1933,11 +1924,6 @@ body {
 }
 .preloader__ball:nth-child(3) {
   animation-delay: 0.4s;
-}
-.preloader__logo {
-  width: 180px;
-  height: auto;
-  animation: fadeIn 0.6s ease forwards;
 }
 
 @keyframes bounce {

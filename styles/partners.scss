@@ -45,6 +45,8 @@
 
             @media(max-width:767px) {
                 width: clamp(250px, 40vw, 365px);
+                position: relative;
+                left: 1dvh;
             }
         }
 
@@ -89,7 +91,7 @@
             @media(max-width:767px) {
                 margin-left: clamp(11vh, 4vw, 15vh);
                 top: 2dvh;
-                left: -1dvh;
+                left: 1dvh;
             }
 
             @media(max-width: 385px) {

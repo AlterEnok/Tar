@@ -47,6 +47,8 @@
 @media (max-width: 767px) {
   .patrones__intro .patrones__title {
     width: clamp(250px, 40vw, 365px);
+    position: relative;
+    left: 1dvh;
   }
 }
 .patrones__intro .patrones__link {
@@ -90,7 +92,7 @@
   .patrones__intro .patrones__link {
     margin-left: clamp(11vh, 4vw, 15vh);
     top: 2dvh;
-    left: -1dvh;
+    left: 1dvh;
   }
 }
 @media (max-width: 385px) {
